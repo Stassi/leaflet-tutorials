@@ -89,6 +89,7 @@ export function createMap({
 export function createWorldLocatorMap({
   id,
   onLocate,
+  onLocateError,
   setViewOnLocate: setView,
   zoomMaxOnLocate: maxZoom
 }) {
@@ -98,6 +99,9 @@ export function createWorldLocatorMap({
       maxZoom,
       setView
     }).on(
+      'locationerror',
+      onLocateError
+    ).on(
       'locationfound',
       onLocate
     )
