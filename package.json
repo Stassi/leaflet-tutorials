@@ -1,0 +1,36 @@
+{
+  "name": "leaflet-tutorials",
+  "version": "0.0.1",
+  "description": "Leaflet quick start tutorial",
+  "keywords": [
+    "leaflet",
+    "tutorial"
+  ],
+  "homepage": "https://github.com/Stassi/leaflet-tutorials#readme",
+  "license": "MPL-2.0",
+  "author": "Andreas Stassivik <andreas@stassi.net>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stassi/leaflet-tutorials.git"
+  },
+  "scripts": {
+    "prestart": "cpx \"node_modules/leaflet/dist/**/*\" public/leaflet",
+    "start": "serve public"
+  },
+  "dependencies": {
+    "cpx2": "^7.0.1",
+    "leaflet": "^1.9.4",
+    "serve": "^14.2.3"
+  },
+  "engines": {
+    "node": "^22.6.0",
+    "npm": "^10.8.2"
+  },
+  "os": [
+    "win32"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "private": true
+}
