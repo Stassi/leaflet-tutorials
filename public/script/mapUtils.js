@@ -82,3 +82,8 @@ export function createMap({
     onClick
   );
 }
+
+export function createWorldMap(id) {
+  return map(id)
+    .fitWorld()
+}
