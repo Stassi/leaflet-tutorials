@@ -2,15 +2,15 @@ import {
   addCircle,
   addMarker,
   addTileLayer,
-  createWorldMap
+  createWorldLocatorMap
 } from './mapUtils.js';
 import { attribution, urlTemplate } from './openStreetMap.js';
 
-const map = createWorldMap('map')
-  .locate({
-    maxZoom: 16,
-    setView: true
-  }).on('locationfound', ({
+const map = createWorldLocatorMap({
+  id: 'map',
+  setViewOnLocate: true,
+  zoomMaxOnLocate: 16,
+  onLocate: ({
     accuracy: radius,
     latlng: latitudeLongitude
   }) => {
@@ -25,7 +25,8 @@ const map = createWorldMap('map')
       map,
       popupContent: `You are within ${radius} meters from this point.`
     }).openPopup();
-  });
+  }
+});
 
 addTileLayer({
   attribution,

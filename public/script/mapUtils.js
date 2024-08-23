@@ -86,7 +86,19 @@ export function createMap({
   );
 }
 
-export function createWorldMap(id) {
+export function createWorldLocatorMap({
+  id,
+  onLocate,
+  setViewOnLocate: setView,
+  zoomMaxOnLocate: maxZoom
+}) {
   return map(id)
     .fitWorld()
+    .locate({
+      maxZoom,
+      setView
+    }).on(
+      'locationfound',
+      onLocate
+    )
 }
