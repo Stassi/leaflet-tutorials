@@ -8,21 +8,24 @@ import {
 } from '../leaflet/leaflet-src.esm.js'
 
 export function addCircle({
-  color,
-  fillColor,
-  fillOpacity,
+  color = '#3388ff',
+  fillColor = '#3388ff',
+  fillOpacity = 0.2,
   latitudeLongitude,
   map,
   popupContent,
   radius
 }) {
-  return circle(latitudeLongitude, {
+  const shape = circle(latitudeLongitude, {
     color,
     fillColor,
     fillOpacity,
     radius
-  }).addTo(map)
-    .bindPopup(popupContent);
+  }).addTo(map);
+
+  return popupContent
+    ? shape.bindPopup(popupContent)
+    : shape;
 }
 
 export function addMarker({
@@ -81,4 +84,25 @@ export function createMap({
     'click',
     onClick
   );
+}
+
+export function createWorldLocatorMap({
+  id,
+  onLocate,
+  onLocateError,
+  setViewOnLocate: setView,
+  zoomMaxOnLocate: maxZoom
+}) {
+  return map(id)
+    .fitWorld()
+    .locate({
+      maxZoom,
+      setView
+    }).on(
+      'locationerror',
+      onLocateError
+    ).on(
+      'locationfound',
+      onLocate
+    )
 }
