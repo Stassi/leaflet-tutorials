@@ -16,13 +16,16 @@ export function addCircle({
   popupContent,
   radius
 }) {
-  return circle(latitudeLongitude, {
+  const shape = circle(latitudeLongitude, {
     color,
     fillColor,
     fillOpacity,
     radius
-  }).addTo(map)
-    .bindPopup(popupContent);
+  }).addTo(map);
+
+  return popupContent
+    ? shape.bindPopup(popupContent)
+    : shape;
 }
 
 export function addMarker({
