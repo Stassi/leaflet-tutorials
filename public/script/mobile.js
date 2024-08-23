@@ -25,6 +25,9 @@ const map = createWorldLocatorMap({
       map,
       popupContent: `You are within ${radius} meters from this point.`
     }).openPopup();
+  },
+  onLocateError: ({ message }) => {
+    alert(message)
   }
 });
 
