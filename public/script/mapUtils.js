@@ -8,9 +8,9 @@ import {
 } from '../leaflet/leaflet-src.esm.js'
 
 export function addCircle({
-  color,
-  fillColor,
-  fillOpacity,
+  color = '#3388ff',
+  fillColor = '#3388ff',
+  fillOpacity = 0.2,
   latitudeLongitude,
   map,
   popupContent,
