@@ -6,6 +6,7 @@ import {
   addTileLayer,
   createMap
 } from './mapUtils.js';
+import { attribution, urlTemplate } from './openStreetMap.js';
 
 const map = createMap({
   center: [51.505, -0.09],
@@ -21,9 +22,9 @@ const map = createMap({
 });
 
 addTileLayer({
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
+  attribution,
   map,
-  urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+  urlTemplate,
   zoomMax: 19,
 });
 
