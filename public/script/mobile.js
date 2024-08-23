@@ -18,7 +18,7 @@ const map = createWorldLocatorMap({
       latitudeLongitude,
       map,
       radius
-    })
+    });
 
     addMarker({
       latitudeLongitude,
