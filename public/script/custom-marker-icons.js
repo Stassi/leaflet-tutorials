@@ -11,43 +11,41 @@ const map = createMap({
   zoom: 13
 });
 
-const iconOptions = {
-  iconAnchor: [22, 94],
-  iconSize: [38, 95],
-  popupAnchor: [-3, -76],
-  shadowAnchor: [4, 62],
-  shadowSize: [50, 64],
-  shadowUrl: 'image/leaf/shadow.png',
-};
-
-addMarker({
-  iconOptions: {
-    ...iconOptions,
+[
+  {
     iconUrl: 'image/leaf/green.png',
+    latitudeLongitude: [51.5, -0.09],
+    popupContent: 'I am a green leaf.'
   },
-  latitudeLongitude: [51.5, -0.09],
-  map,
-  popupContent: 'I am a green leaf.'
-});
-
-addMarker({
-  iconOptions: {
-    ...iconOptions,
+  {
     iconUrl: 'image/leaf/orange.png',
+    latitudeLongitude: [51.49, -0.1],
+    popupContent: 'I am an orange leaf.'
   },
-  latitudeLongitude: [51.49, -0.1],
-  map,
-  popupContent: 'I am an orange leaf.'
-});
-
-addMarker({
-  iconOptions: {
-    ...iconOptions,
+  {
     iconUrl: 'image/leaf/red.png',
-  },
-  latitudeLongitude: [51.495, -0.083],
-  map,
-  popupContent: 'I am a red leaf.'
+    latitudeLongitude: [51.495, -0.083],
+    popupContent: 'I am a red leaf.'
+  }
+].forEach(({
+  iconUrl,
+  latitudeLongitude,
+  popupContent
+}) => {
+  addMarker({
+    iconOptions: {
+      iconAnchor: [22, 94],
+      iconSize: [38, 95],
+      iconUrl,
+      popupAnchor: [-3, -76],
+      shadowAnchor: [4, 62],
+      shadowSize: [50, 64],
+      shadowUrl: 'image/leaf/shadow.png',
+    },
+    latitudeLongitude,
+    map,
+    popupContent,
+  });
 });
 
 addTileLayer({
