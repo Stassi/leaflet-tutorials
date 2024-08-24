@@ -11,6 +11,12 @@ const map = createMap({
   zoom: 13
 });
 
+addTileLayer({
+  attribution,
+  map,
+  urlTemplate,
+});
+
 [
   {
     iconUrl: 'image/leaf/green.png',
@@ -46,10 +52,4 @@ const map = createMap({
     map,
     popupContent,
   });
-});
-
-addTileLayer({
-  attribution,
-  map,
-  urlTemplate,
 });
