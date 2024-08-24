@@ -63,7 +63,7 @@ export function addTileLayer({
   attribution,
   map,
   urlTemplate,
-  zoomMax: maxZoom,
+  zoomMax: maxZoom = 18,
 }) {
   return tileLayer(urlTemplate, {
     attribution,
