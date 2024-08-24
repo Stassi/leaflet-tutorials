@@ -1,5 +1,6 @@
 import {
   circle,
+  icon,
   map,
   marker,
   polygon,
@@ -29,13 +30,21 @@ export function addCircle({
 }
 
 export function addMarker({
+  iconOptions,
   latitudeLongitude,
   map,
   popupContent
 }) {
-  return marker(latitudeLongitude)
-    .addTo(map)
-    .bindPopup(popupContent);
+  const createdMarker = marker(
+    latitudeLongitude,
+    iconOptions
+      ? { icon: icon(iconOptions) }
+      : undefined
+  ).addTo(map);
+
+  return popupContent
+    ? createdMarker.bindPopup(popupContent)
+    : createdMarker;
 }
 
 export function addPolygon({
@@ -63,7 +72,7 @@ export function addTileLayer({
   attribution,
   map,
   urlTemplate,
-  zoomMax: maxZoom,
+  zoomMax: maxZoom = 18,
 }) {
   return tileLayer(urlTemplate, {
     attribution,
@@ -74,7 +83,8 @@ export function addTileLayer({
 export function createMap({
   center,
   id,
-  onClick,
+  onClick = () => {
+  },
   zoom
 }) {
   return map(id, {

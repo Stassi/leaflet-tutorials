@@ -3,8 +3,8 @@ import {
   addMarker,
   addTileLayer,
   createWorldLocatorMap
-} from './mapUtils.js';
-import { attribution, urlTemplate } from './openStreetMap.js';
+} from './map-utils.js';
+import { attribution, urlTemplate } from './open-street-map.js';
 
 const map = createWorldLocatorMap({
   id: 'map',

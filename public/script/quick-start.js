@@ -5,8 +5,8 @@ import {
   addPopup,
   addTileLayer,
   createMap
-} from './mapUtils.js';
-import { attribution, urlTemplate } from './openStreetMap.js';
+} from './map-utils.js';
+import { attribution, urlTemplate } from './open-street-map.js';
 
 const map = createMap({
   center: [51.505, -0.09],
