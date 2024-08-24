@@ -74,7 +74,8 @@ export function addTileLayer({
 export function createMap({
   center,
   id,
-  onClick,
+  onClick = () => {
+  },
   zoom
 }) {
   return map(id, {
