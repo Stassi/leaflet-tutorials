@@ -32,6 +32,15 @@ addMarker({
 addMarker({
   iconOptions: {
     ...iconOptions,
+    iconUrl: 'image/leaf/orange.png',
+  },
+  latitudeLongitude: [51.49, -0.1],
+  map
+});
+
+addMarker({
+  iconOptions: {
+    ...iconOptions,
     iconUrl: 'image/leaf/red.png',
   },
   latitudeLongitude: [51.495, -0.083],
