@@ -26,7 +26,8 @@ addMarker({
     iconUrl: 'image/leaf/green.png',
   },
   latitudeLongitude: [51.5, -0.09],
-  map
+  map,
+  popupContent: 'I am a green leaf.'
 });
 
 addMarker({
@@ -35,7 +36,8 @@ addMarker({
     iconUrl: 'image/leaf/orange.png',
   },
   latitudeLongitude: [51.49, -0.1],
-  map
+  map,
+  popupContent: 'I am an orange leaf.'
 });
 
 addMarker({
@@ -44,7 +46,8 @@ addMarker({
     iconUrl: 'image/leaf/red.png',
   },
   latitudeLongitude: [51.495, -0.083],
-  map
+  map,
+  popupContent: 'I am a red leaf.'
 });
 
 addTileLayer({
