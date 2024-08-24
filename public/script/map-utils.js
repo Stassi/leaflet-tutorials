@@ -1,5 +1,6 @@
 import {
   circle,
+  icon,
   map,
   marker,
   polygon,
@@ -29,13 +30,21 @@ export function addCircle({
 }
 
 export function addMarker({
+  iconOptions,
   latitudeLongitude,
   map,
   popupContent
 }) {
-  return marker(latitudeLongitude)
-    .addTo(map)
-    .bindPopup(popupContent);
+  const createdMarker = marker(
+    latitudeLongitude,
+    iconOptions
+      ? { icon: icon(iconOptions) }
+      : undefined
+  ).addTo(map);
+
+  return popupContent
+    ? createdMarker.bindPopup(popupContent)
+    : createdMarker;
 }
 
 export function addPolygon({
