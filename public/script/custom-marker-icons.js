@@ -11,17 +11,30 @@ const map = createMap({
   zoom: 13
 });
 
+const iconOptions = {
+  iconAnchor: [22, 94],
+  iconSize: [38, 95],
+  popupAnchor: [-3, -76],
+  shadowAnchor: [4, 62],
+  shadowSize: [50, 64],
+  shadowUrl: 'image/leaf/shadow.png',
+};
+
 addMarker({
   iconOptions: {
-    iconAnchor: [22, 94],
-    iconSize: [38, 95],
+    ...iconOptions,
     iconUrl: 'image/leaf/green.png',
-    popupAnchor: [-3, -76],
-    shadowAnchor: [4, 62],
-    shadowSize: [50, 64],
-    shadowUrl: 'image/leaf/shadow.png'
   },
   latitudeLongitude: [51.5, -0.09],
+  map
+});
+
+addMarker({
+  iconOptions: {
+    ...iconOptions,
+    iconUrl: 'image/leaf/red.png',
+  },
+  latitudeLongitude: [51.495, -0.083],
   map
 });
 
