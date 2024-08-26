@@ -14,7 +14,9 @@
     "url": "git+https://github.com/Stassi/leaflet-tutorials.git"
   },
   "scripts": {
-    "prestart": "cpx \"node_modules/leaflet/dist/**/*\" public/leaflet",
+    "import:leaflet": "cpx \"node_modules/leaflet/dist/**/*\" public/leaflet",
+    "import:leaflet:fullscreen": "cpx \"node_modules/leaflet-fullscreen/dist/**/*\" public/leaflet/fullscreen",
+    "prestart": "npm run import:leaflet && npm run import:leaflet:fullscreen",
     "start": "serve public"
   },
   "dependencies": {
