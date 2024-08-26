@@ -20,6 +20,7 @@
   "dependencies": {
     "cpx2": "^7.0.1",
     "leaflet": "^1.9.4",
+    "leaflet-fullscreen": "^1.0.2",
     "serve": "^14.2.3"
   },
   "engines": {
