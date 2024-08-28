@@ -78,9 +78,20 @@ addGeoJson({
     'type': 'Feature',
   }],
   map,
-  style: {
-    'color': '#ff7800',
-    'opacity': 0.65,
-    'weight': 5,
+  style({
+    geometry: { type },
+    properties: { faction },
+  }) {
+    if (type === 'LineString') return {
+      'color': '#ff7800',
+      'opacity': 0.65,
+      'weight': 5,
+    };
+
+    if (faction) return {
+      'color': faction === 'Pluralist'
+        ? '#0000ff'
+        : '#ff0000'
+    };
   },
 });
