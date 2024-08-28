@@ -33,6 +33,7 @@ export function addCircle({
 
 export function addGeoJson({
   data,
+  filter,
   map,
   onEachFeature,
   pointToLayer,
@@ -41,6 +42,7 @@ export function addGeoJson({
   return geoJSON(
     data,
     {
+      filter,
       onEachFeature,
       pointToLayer,
       style,
