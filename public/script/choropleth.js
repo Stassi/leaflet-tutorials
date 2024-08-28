@@ -20,9 +20,31 @@ addTileLayer({
   zoomMax: 19,
 });
 
-addGeoJson({
+const geoJson = addGeoJson({
   data,
   map,
+  onEachFeature(_feature, layer) {
+    layer.on({
+      click({ target }) {
+        map.fitBounds(
+          target.getBounds()
+        );
+      },
+      mouseout({ target }) {
+        geoJson.resetStyle(target);
+      },
+      mouseover({ target: layer }) {
+        layer.setStyle({
+          color: '#666',
+          dashArray: '',
+          fillOpacity: 0.7,
+          weight: 5,
+        });
+
+        layer.bringToFront();
+      },
+    });
+  },
   style({
     properties: { density },
   }) {
