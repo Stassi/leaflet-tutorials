@@ -34,12 +34,14 @@ export function addCircle({
 export function addGeoJson({
   data,
   map,
+  onEachFeature,
   pointToLayer,
   style,
 }) {
   return geoJSON(
     data,
     {
+      onEachFeature,
       pointToLayer,
       style,
     },
