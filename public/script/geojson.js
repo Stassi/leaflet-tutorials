@@ -92,6 +92,17 @@ addGeoJson({
     'type': 'Feature',
   }],
   map,
+  onEachFeature(
+    {
+      properties: {
+        popupContent,
+        underConstruction,
+      } = {},
+    },
+    layer,
+  ) {
+    if (popupContent && !underConstruction) layer.bindPopup(popupContent);
+  },
   pointToLayer(_feature, latitudeLongitude) {
     return createCircleMarker({
       color: '#000',
