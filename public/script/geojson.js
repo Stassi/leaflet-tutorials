@@ -27,8 +27,9 @@ addGeoJson({
     },
     'properties': {
       'amenity': 'Baseball Stadium',
-      'name': 'Coors Field',
-      'popupContent': 'This is where the Rockies play!'
+      'name': 'Northwest Field',
+      'popupContent': 'This is where the Sockies play!',
+      'underConstruction': false,
     },
     'type': 'Feature',
   }, {
