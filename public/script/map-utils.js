@@ -1,5 +1,6 @@
 import {
   circle,
+  circleMarker,
   geoJSON,
   icon,
   map,
@@ -98,6 +99,28 @@ export function addTileLayer({
     attribution,
     maxZoom
   }).addTo(map);
+}
+
+export function createCircleMarker({
+  color,
+  fillColor,
+  fillOpacity,
+  latitudeLongitude,
+  opacity,
+  radius,
+  weight,
+}) {
+  return circleMarker(
+    latitudeLongitude,
+    {
+      color,
+      fillColor,
+      fillOpacity,
+      opacity,
+      radius,
+      weight,
+    },
+  );
 }
 
 export function createMap({
