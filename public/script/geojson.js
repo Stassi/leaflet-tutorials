@@ -1,6 +1,7 @@
 import {
   addGeoJson,
   addTileLayer,
+  createCircleMarker,
   createMap,
 } from './map-utils.js';
 import { attribution, urlTemplate } from './open-street-map.js';
@@ -78,6 +79,17 @@ addGeoJson({
     'type': 'Feature',
   }],
   map,
+  pointToLayer(_feature, latitudeLongitude) {
+    return createCircleMarker({
+      color: "#000",
+      fillColor: "#ff7800",
+      fillOpacity: 0.8,
+      latitudeLongitude,
+      opacity: 1,
+      radius: 8,
+      weight: 1,
+    });
+  },
   style({
     geometry: { type },
     properties: { faction },
