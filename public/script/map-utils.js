@@ -1,5 +1,7 @@
 import {
   circle,
+  circleMarker,
+  geoJSON,
   icon,
   map,
   marker,
@@ -27,6 +29,25 @@ export function addCircle({
   return popupContent
     ? shape.bindPopup(popupContent)
     : shape;
+}
+
+export function addGeoJson({
+  data,
+  filter,
+  map,
+  onEachFeature,
+  pointToLayer,
+  style,
+}) {
+  return geoJSON(
+    data,
+    {
+      filter,
+      onEachFeature,
+      pointToLayer,
+      style,
+    },
+  ).addTo(map);
 }
 
 export function addMarker({
@@ -82,6 +103,28 @@ export function addTileLayer({
     attribution,
     maxZoom
   }).addTo(map);
+}
+
+export function createCircleMarker({
+  color,
+  fillColor,
+  fillOpacity,
+  latitudeLongitude,
+  opacity,
+  radius,
+  weight,
+}) {
+  return circleMarker(
+    latitudeLongitude,
+    {
+      color,
+      fillColor,
+      fillOpacity,
+      opacity,
+      radius,
+      weight,
+    },
+  );
 }
 
 export function createMap({
