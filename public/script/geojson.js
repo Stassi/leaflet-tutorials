@@ -21,46 +21,46 @@ addTileLayer({
 
 addGeoJson({
   data: [{
-    'geometry': {
-      'coordinates': [-104.99404, 39.75621],
-      'type': 'Point'
+    geometry: {
+      coordinates: [-104.99404, 39.75621],
+      type: 'Point'
     },
-    'properties': {
-      'amenity': 'Baseball Stadium',
-      'name': 'Northwest Field',
-      'popupContent': 'This is where the Sockies play!',
-      'underConstruction': false,
+    properties: {
+      amenity: 'Baseball Stadium',
+      name: 'Northwest Field',
+      popupContent: 'This is where the Sockies play!',
+      underConstruction: false,
     },
-    'type': 'Feature',
+    type: 'Feature',
   }, {
-    'geometry': {
-      'coordinates': [-104.98404, 39.74621],
-      'type': 'Point'
+    geometry: {
+      coordinates: [-104.98404, 39.74621],
+      type: 'Point'
     },
-    'properties': {
-      'amenity': 'Baseball Stadium',
-      'name': 'Southeast Field',
-      'popupContent': 'A publicly funded stadium.',
-      'underConstruction': true,
+    properties: {
+      amenity: 'Baseball Stadium',
+      name: 'Southeast Field',
+      popupContent: 'A publicly funded stadium.',
+      underConstruction: true,
     },
-    'type': 'Feature',
+    type: 'Feature',
   }, {
-    'coordinates': [
+    coordinates: [
       [-100, 40],
       [-105, 45],
       [-110, 55],
     ],
-    'type': 'LineString',
+    type: 'LineString',
   }, {
-    'coordinates': [
+    coordinates: [
       [-105, 40],
       [-110, 45],
       [-115, 55],
     ],
-    'type': 'LineString',
+    type: 'LineString',
   }, {
-    'geometry': {
-      'coordinates': [[
+    geometry: {
+      coordinates: [[
         [-124.156851, 46.249819],
         [-122.296709, 45.543727],
         [-116.915994, 45.995346],
@@ -69,27 +69,27 @@ addGeoJson({
         [-124.699124, 42.749829],
         [-124.156851, 46.249819],
       ]],
-      'type': 'Polygon',
+      type: 'Polygon',
     },
-    'properties': {
-      'faction': 'Pluralist'
+    properties: {
+      faction: 'Pluralist'
     },
-    'type': 'Feature',
+    type: 'Feature',
   }, {
-    'geometry': {
-      'coordinates': [[
+    geometry: {
+      coordinates: [[
         [-104.05, 48.99],
         [-97.22, 48.98],
         [-96.58, 45.94],
         [-104.03, 45.94],
         [-104.05, 48.99],
       ]],
-      'type': 'Polygon',
+      type: 'Polygon',
     },
-    'properties': {
-      'faction': 'Reactionary'
+    properties: {
+      faction: 'Reactionary'
     },
-    'type': 'Feature',
+    type: 'Feature',
   }],
   filter({
     properties: { underConstruction } = {},
