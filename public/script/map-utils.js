@@ -1,5 +1,6 @@
 import {
   circle,
+  geoJSON,
   icon,
   map,
   marker,
@@ -27,6 +28,17 @@ export function addCircle({
   return popupContent
     ? shape.bindPopup(popupContent)
     : shape;
+}
+
+export function addGeoJson({
+  data,
+  map,
+  style,
+}) {
+  return geoJSON(
+    data,
+    { style },
+  ).addTo(map);
 }
 
 export function addMarker({
