@@ -91,6 +91,11 @@ addGeoJson({
     },
     'type': 'Feature',
   }],
+  filter({
+    properties: { underConstruction } = {},
+  }) {
+    return !underConstruction;
+  },
   map,
   onEachFeature(
     {
