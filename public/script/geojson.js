@@ -33,6 +33,18 @@ addGeoJson({
     },
     'type': 'Feature',
   }, {
+    'geometry': {
+      'coordinates': [-104.98404, 39.74621],
+      'type': 'Point'
+    },
+    'properties': {
+      'amenity': 'Baseball Stadium',
+      'name': 'Southeast Field',
+      'popupContent': 'A publicly funded stadium.',
+      'underConstruction': true,
+    },
+    'type': 'Feature',
+  }, {
     'coordinates': [
       [-100, 40],
       [-105, 45],
@@ -82,8 +94,8 @@ addGeoJson({
   map,
   pointToLayer(_feature, latitudeLongitude) {
     return createCircleMarker({
-      color: "#000",
-      fillColor: "#ff7800",
+      color: '#000',
+      fillColor: '#ff7800',
       fillOpacity: 0.8,
       latitudeLongitude,
       opacity: 1,
