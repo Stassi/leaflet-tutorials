@@ -105,7 +105,7 @@ Map.include({
     this.invalidateSize();
   },
 
-  _onFullscreenChange: function (e) {
+  _onFullscreenChange: function () {
     var fullscreenElement =
       document.fullscreenElement ||
       document.mozFullScreenElement ||
