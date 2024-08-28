@@ -30,6 +30,7 @@ export function addCircle({
 }
 
 export function addMarker({
+  altText: alt = 'Marker',
   iconOptions,
   latitudeLongitude,
   map,
@@ -37,9 +38,12 @@ export function addMarker({
 }) {
   const createdMarker = marker(
     latitudeLongitude,
-    iconOptions
-      ? { icon: icon(iconOptions) }
-      : undefined
+    {
+      alt,
+      ...iconOptions
+        ? { icon: icon(iconOptions) }
+        : {}
+    },
   ).addTo(map);
 
   return popupContent
