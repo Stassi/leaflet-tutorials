@@ -33,11 +33,15 @@ export function addCircle({
 export function addGeoJson({
   data,
   map,
+  pointToLayer,
   style,
 }) {
   return geoJSON(
     data,
-    { style },
+    {
+      pointToLayer,
+      style,
+    },
   ).addTo(map);
 }
 
