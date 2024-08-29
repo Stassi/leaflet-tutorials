@@ -11,6 +11,8 @@ import {
   tileLayer
 } from '../leaflet/leaflet-src.esm.js'
 
+export { DomUtil } from '../leaflet/leaflet-src.esm.js';
+
 export function addCircle({
   color = '#3388ff',
   fillColor = '#3388ff',
