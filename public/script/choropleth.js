@@ -1,4 +1,6 @@
 import {
+  DomUtil,
+  addControl,
   addGeoJson,
   addTileLayer,
   createMap,
@@ -20,6 +22,30 @@ addTileLayer({
   zoomMax: 19,
 });
 
+const info = addControl({
+  map,
+  onAdd(_map) {
+    this._div = DomUtil.create(
+      'div',
+      'info',
+    );
+
+    this.update();
+
+    return this._div;
+  },
+  update({
+    density,
+    name,
+  } = {}) {
+    this._div.innerHTML = `<h4>US population density</h4>${
+      density && name
+        ? `<b>${name}</b><br />${density} people / mi<sup>2</sup>`
+        : 'Hover over a state'
+    }`;
+  },
+});
+
 const geoJson = addGeoJson({
   data,
   map,
@@ -31,9 +57,18 @@ const geoJson = addGeoJson({
         );
       },
       mouseout({ target }) {
+        info.update()
+
         geoJson.resetStyle(target);
       },
-      mouseover({ target: layer }) {
+      mouseover({
+        target: layer,
+        target: {
+          feature: { properties },
+        },
+      }) {
+        info.update(properties);
+
         layer.setStyle({
           color: '#666',
           dashArray: '',
