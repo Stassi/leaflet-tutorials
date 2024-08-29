@@ -1,6 +1,7 @@
 import {
   circle,
   circleMarker,
+  control,
   geoJSON,
   icon,
   map,
@@ -29,6 +30,24 @@ export function addCircle({
   return popupContent
     ? shape.bindPopup(popupContent)
     : shape;
+}
+
+export function addControl({
+  map,
+  onAdd,
+  update,
+}) {
+  const createdControl = control();
+
+  createdControl.onAdd = onAdd
+    ? onAdd
+    : createdControl.onAdd;
+
+  createdControl.update = update
+    ? update
+    : createdControl.update;
+
+  return createdControl.addTo(map);
 }
 
 export function addGeoJson({
