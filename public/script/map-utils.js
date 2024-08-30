@@ -8,7 +8,7 @@ import {
   marker,
   polygon,
   popup,
-  tileLayer
+  tileLayer,
 } from '../leaflet/leaflet-src.esm.js'
 
 export { DomUtil } from '../leaflet/leaflet-src.esm.js';
@@ -154,7 +154,7 @@ export function createMap({
   id,
   onClick = () => {
   },
-  zoom
+  zoom,
 }) {
   return map(id, {
     center,
