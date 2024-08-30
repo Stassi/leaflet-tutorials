@@ -72,6 +72,17 @@ export function addGeoJson({
   ).addTo(map);
 }
 
+export function addLayersControl({
+  baseLayers,
+  map,
+  overlays,
+}) {
+  return control.layers(
+    baseLayers,
+    overlays,
+  ).addTo(map);
+}
+
 export function addMarker({
   altText: alt = 'Marker',
   iconOptions,
