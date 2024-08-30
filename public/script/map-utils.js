@@ -161,6 +161,7 @@ export function createCircleMarker({
 }
 
 export function createMap({
+  activeLayers: layers,
   center,
   id,
   onClick = () => {
@@ -169,6 +170,7 @@ export function createMap({
 }) {
   return map(id, {
     center,
+    layers,
     zoom
   }).on(
     'click',
