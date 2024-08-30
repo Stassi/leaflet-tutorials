@@ -44,9 +44,7 @@ const info = addControl({
         : 'Hover over a state'
     }`;
   },
-});
-
-const geoJson = addGeoJson({
+}), geoJson = addGeoJson({
   data,
   map,
   onEachFeature(_feature, layer) {
