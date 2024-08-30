@@ -1,6 +1,7 @@
 import {
   circle,
   circleMarker,
+  control,
   geoJSON,
   icon,
   map,
@@ -9,6 +10,8 @@ import {
   popup,
   tileLayer
 } from '../leaflet/leaflet-src.esm.js'
+
+export { DomUtil } from '../leaflet/leaflet-src.esm.js';
 
 export function addCircle({
   color = '#3388ff',
@@ -29,6 +32,25 @@ export function addCircle({
   return popupContent
     ? shape.bindPopup(popupContent)
     : shape;
+}
+
+export function addControl({
+  map,
+  onAdd,
+  position = 'topright',
+  update,
+}) {
+  const createdControl = control({ position });
+
+  createdControl.onAdd = onAdd
+    ? onAdd
+    : createdControl.onAdd;
+
+  createdControl.update = update
+    ? update
+    : createdControl.update;
+
+  return createdControl.addTo(map);
 }
 
 export function addGeoJson({
