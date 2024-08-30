@@ -3,7 +3,7 @@ import {
   addTileLayer,
 } from './map-utils.js';
 import { createFullscreenMap } from './leaflet-fullscreen.js';
-import { attribution, urlTemplate } from './open-street-map.js';
+import { attributionOsm, urlTemplateOsm } from './base-layers.js';
 
 const altText = 'Kyiv',
   map = createFullscreenMap({
@@ -20,8 +20,8 @@ addMarker({
 });
 
 addTileLayer({
-  attribution,
+  attribution: attributionOsm,
   map,
-  urlTemplate,
+  urlTemplate: urlTemplateOsm,
   zoomMax: 19,
 });

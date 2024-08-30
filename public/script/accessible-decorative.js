@@ -3,7 +3,7 @@ import {
   addTileLayer,
   createMap
 } from './map-utils.js';
-import { attribution, urlTemplate } from './open-street-map.js';
+import { attributionOsm, urlTemplateOsm } from './base-layers.js';
 
 const map = createMap({
   center: [50.4501, 30.5234],
@@ -17,7 +17,7 @@ addMarker({
 });
 
 addTileLayer({
-  attribution,
+  attribution: attributionOsm,
   map,
-  urlTemplate,
+  urlTemplate: urlTemplateOsm,
 });

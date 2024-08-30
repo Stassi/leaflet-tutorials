@@ -6,7 +6,7 @@ import {
   addTileLayer,
   createMap
 } from './map-utils.js';
-import { attribution, urlTemplate } from './open-street-map.js';
+import { attributionOsm, urlTemplateOsm } from './base-layers.js';
 
 const map = createMap({
   center: [51.505, -0.09],
@@ -22,9 +22,9 @@ const map = createMap({
 });
 
 addTileLayer({
-  attribution,
+  attribution: attributionOsm,
   map,
-  urlTemplate,
+  urlTemplate: urlTemplateOsm,
   zoomMax: 19,
 });
 

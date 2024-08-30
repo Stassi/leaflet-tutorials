@@ -4,7 +4,7 @@ import {
   addTileLayer,
   createWorldLocatorMap
 } from './map-utils.js';
-import { attribution, urlTemplate } from './open-street-map.js';
+import { attributionOsm, urlTemplateOsm } from './base-layers.js';
 
 const map = createWorldLocatorMap({
   id: 'map',
@@ -32,8 +32,8 @@ const map = createWorldLocatorMap({
 });
 
 addTileLayer({
-  attribution,
+  attribution: attributionOsm,
   map,
-  urlTemplate,
+  urlTemplate: urlTemplateOsm,
   zoomMax: 19
 });
