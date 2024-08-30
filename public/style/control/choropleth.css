@@ -12,3 +12,16 @@ h4,
   color: #777;
   margin: 0 0 5px;
 }
+
+.legend {
+  color: #555;
+  line-height: 18px;
+}
+
+.legend i {
+  float: left;
+  height: 18px;
+  margin-right: 8px;
+  opacity: 0.7;
+  width: 18px;
+}
