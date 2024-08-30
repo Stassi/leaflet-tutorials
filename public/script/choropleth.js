@@ -13,13 +13,56 @@ const map = createMap({
   center: [37.8, -96],
   id: 'map',
   zoom: 4
-});
+}), grades = [
+  0,
+  10,
+  20,
+  50,
+  100,
+  200,
+  500,
+  1000,
+];
 
 addTileLayer({
   attribution,
   map,
   urlTemplate,
   zoomMax: 19,
+});
+
+function getColor(density) {
+  return density > grades[7] ? '#800026' :
+    density > grades[6] ? '#BD0026' :
+      density > grades[5] ? '#E31A1C' :
+        density > grades[4] ? '#FC4E2A' :
+          density > grades[3] ? '#FD8D3C' :
+            density > grades[2] ? '#FEB24C' :
+              density > grades[1] ? '#FED976' :
+                '#FFEDA0';
+}
+
+addControl({
+  map,
+  onAdd(_map) {
+    const div = DomUtil.create(
+      'div',
+      'info legend',
+    );
+
+    div.innerHTML = grades.map(
+      (grade, i) => {
+        const nextGrade = grades[i + 1],
+          color = getColor(grade + 1),
+          range = nextGrade
+            ? `${grade}&ndash;${nextGrade}<br>`
+            : `${grade}+`;
+        return `<i style="background:${color}"></i> ${range}`;
+      }).join('');
+
+    return div;
+  },
+  position: 'bottomright',
 });
 
 const info = addControl({
@@ -84,14 +127,7 @@ const info = addControl({
     return {
       color: 'white',
       dashArray: '3',
-      fillColor: density > 1000 ? '#800026' :
-        density > 500 ? '#BD0026' :
-          density > 200 ? '#E31A1C' :
-            density > 100 ? '#FC4E2A' :
-              density > 50 ? '#FD8D3C' :
-                density > 20 ? '#FEB24C' :
-                  density > 10 ? '#FED976' :
-                    '#FFEDA0',
+      fillColor: getColor(density),
       fillOpacity: 0.7,
       opacity: 1,
       weight: 2,
