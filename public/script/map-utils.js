@@ -86,12 +86,33 @@ export function addLayersControl({
   ).addTo(map);
 }
 
+export function createMarker({
+  altText: alt = 'Marker',
+  iconOptions,
+  latitudeLongitude,
+  popupContent,
+}) {
+  const createdMarker = marker(
+    latitudeLongitude,
+    {
+      alt,
+      ...iconOptions
+        ? { icon: icon(iconOptions) }
+        : {}
+    },
+  );
+
+  return popupContent
+    ? createdMarker.bindPopup(popupContent)
+    : createdMarker;
+}
+
 export function addMarker({
   altText: alt = 'Marker',
   iconOptions,
   latitudeLongitude,
   map,
-  popupContent
+  popupContent,
 }) {
   const createdMarker = marker(
     latitudeLongitude,
