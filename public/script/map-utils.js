@@ -129,6 +129,20 @@ export function addPopup({
     .openOn(map);
 }
 
+export function createTileLayer({
+  attribution,
+  urlTemplate,
+  zoomMax: maxZoom = 18,
+}) {
+  return tileLayer(
+    urlTemplate,
+    {
+      attribution,
+      maxZoom,
+    },
+  );
+}
+
 export function addTileLayer({
   attribution,
   map,
