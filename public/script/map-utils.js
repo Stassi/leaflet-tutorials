@@ -37,9 +37,10 @@ export function addCircle({
 export function addControl({
   map,
   onAdd,
+  position = 'topright',
   update,
 }) {
-  const createdControl = control();
+  const createdControl = control({ position });
 
   createdControl.onAdd = onAdd
     ? onAdd
