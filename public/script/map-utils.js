@@ -107,26 +107,9 @@ export function createMarker({
     : createdMarker;
 }
 
-export function addMarker({
-  altText: alt = 'Marker',
-  iconOptions,
-  latitudeLongitude,
-  map,
-  popupContent,
-}) {
-  const createdMarker = marker(
-    latitudeLongitude,
-    {
-      alt,
-      ...iconOptions
-        ? { icon: icon(iconOptions) }
-        : {}
-    },
-  ).addTo(map);
-
-  return popupContent
-    ? createdMarker.bindPopup(popupContent)
-    : createdMarker;
+export function addMarker({ map, ...props }) {
+  return createMarker({ ...props })
+    .addTo(map);
 }
 
 export function addPolygon({
