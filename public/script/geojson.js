@@ -4,7 +4,7 @@ import {
   createCircleMarker,
   createMap,
 } from './map-utils.js';
-import { attribution, urlTemplate } from './open-street-map.js';
+import { attributionOsm, urlTemplateOsm } from './base-layers.js';
 import data from '../data/baseball-factions.json' with { type: 'json' };
 
 const map = createMap({
@@ -14,9 +14,9 @@ const map = createMap({
 });
 
 addTileLayer({
-  attribution,
+  attribution: attributionOsm,
   map,
-  urlTemplate,
+  urlTemplate: urlTemplateOsm,
   zoomMax: 19,
 });
 

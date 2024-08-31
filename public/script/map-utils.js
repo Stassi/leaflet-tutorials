@@ -8,10 +8,13 @@ import {
   marker,
   polygon,
   popup,
-  tileLayer
+  tileLayer,
 } from '../leaflet/leaflet-src.esm.js'
 
-export { DomUtil } from '../leaflet/leaflet-src.esm.js';
+export {
+  DomUtil,
+  layerGroup as createLayerGroup,
+} from '../leaflet/leaflet-src.esm.js';
 
 export function addCircle({
   color = '#3388ff',
@@ -72,12 +75,22 @@ export function addGeoJson({
   ).addTo(map);
 }
 
-export function addMarker({
+export function addLayersControl({
+  baseLayers,
+  map,
+  overlays,
+}) {
+  return control.layers(
+    baseLayers,
+    overlays,
+  ).addTo(map);
+}
+
+export function createMarker({
   altText: alt = 'Marker',
   iconOptions,
   latitudeLongitude,
-  map,
-  popupContent
+  popupContent,
 }) {
   const createdMarker = marker(
     latitudeLongitude,
@@ -87,11 +100,16 @@ export function addMarker({
         ? { icon: icon(iconOptions) }
         : {}
     },
-  ).addTo(map);
+  );
 
   return popupContent
     ? createdMarker.bindPopup(popupContent)
     : createdMarker;
+}
+
+export function addMarker({ map, ...props }) {
+  return createMarker({ ...props })
+    .addTo(map);
 }
 
 export function addPolygon({
@@ -115,16 +133,23 @@ export function addPopup({
     .openOn(map);
 }
 
-export function addTileLayer({
+export function createTileLayer({
   attribution,
-  map,
   urlTemplate,
   zoomMax: maxZoom = 18,
 }) {
-  return tileLayer(urlTemplate, {
-    attribution,
-    maxZoom
-  }).addTo(map);
+  return tileLayer(
+    urlTemplate,
+    {
+      attribution,
+      maxZoom,
+    },
+  );
+}
+
+export function addTileLayer({ map, ...props }) {
+  return createTileLayer({ ...props })
+    .addTo(map);
 }
 
 export function createCircleMarker({
@@ -150,14 +175,16 @@ export function createCircleMarker({
 }
 
 export function createMap({
+  activeLayers: layers,
   center,
   id,
   onClick = () => {
   },
-  zoom
+  zoom,
 }) {
   return map(id, {
     center,
+    layers,
     zoom
   }).on(
     'click',
