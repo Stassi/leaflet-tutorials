@@ -147,16 +147,9 @@ export function createTileLayer({
   );
 }
 
-export function addTileLayer({
-  attribution,
-  map,
-  urlTemplate,
-  zoomMax: maxZoom = 18,
-}) {
-  return tileLayer(urlTemplate, {
-    attribution,
-    maxZoom
-  }).addTo(map);
+export function addTileLayer({ map, ...props }) {
+  return createTileLayer({ ...props })
+    .addTo(map);
 }
 
 export function createCircleMarker({
