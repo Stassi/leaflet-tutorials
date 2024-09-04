@@ -240,3 +240,14 @@ export function setMapView({
     zoomPanOptions,
   );
 }
+
+export function setMapZoom({
+  map,
+  zoom,
+  zoomPanOptions,
+}) {
+  return map.setZoom(
+    zoom,
+    zoomPanOptions,
+  );
+}
