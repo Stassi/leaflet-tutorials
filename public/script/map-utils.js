@@ -2,6 +2,7 @@ import {
   circle,
   circleMarker,
   control,
+  DomUtil,
   geoJSON,
   icon,
   map,
@@ -181,6 +182,22 @@ export function createCircleMarker({
       weight,
     },
   );
+}
+
+export function createDomElement({ name, style }) {
+  const element = DomUtil.create(name);
+
+  Object.assign(
+    element.style,
+    style,
+  );
+
+  return {
+    element,
+    setInnerHtml(innerHtml) {
+      element.innerHTML = innerHtml;
+    },
+  };
 }
 
 export function createMap({
