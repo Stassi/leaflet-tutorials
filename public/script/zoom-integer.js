@@ -1,6 +1,9 @@
 import {
+  addControl,
   addTileLayer,
+  createDomElement,
   createMap,
+  getMapZoom,
   setMapZoom,
 } from './map-utils.js';
 import {
@@ -36,3 +39,27 @@ setInterval(() => {
     zoomMap(1);
   }, 2000);
 }, 4000);
+
+addControl({
+  map,
+  onAdd() {
+    const {
+      element,
+      setInnerHtml,
+    } = createDomElement({
+      name: 'div',
+      style: {
+        background: 'rgba(255,255,255,0.5)',
+        color: '#000',
+        textAlign: 'left',
+        width: '200px',
+      },
+    });
+
+    map.on('zoom zoomend zoomstart', (_ev) => {
+      setInnerHtml(`Zoom level: ${getMapZoom(map)}`);
+    });
+
+    return element;
+  },
+});
