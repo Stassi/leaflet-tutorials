@@ -227,3 +227,16 @@ export function createWorldLocatorMap({
       onLocate
     )
 }
+
+export function setMapView({
+  center,
+  map,
+  zoom,
+  zoomPanOptions,
+}) {
+  return map.setView(
+    center,
+    zoom,
+    zoomPanOptions,
+  );
+}
