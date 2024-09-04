@@ -228,6 +228,10 @@ export function createWorldLocatorMap({
     )
 }
 
+export function getMapZoom(map) {
+  return map.getZoom()
+}
+
 export function setMapView({
   center,
   map,
