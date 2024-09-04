@@ -177,6 +177,7 @@ export function createCircleMarker({
 export function createMap({
   activeLayers: layers,
   center,
+  dragging = true,
   id,
   onClick = () => {
   },
@@ -186,6 +187,7 @@ export function createMap({
 }) {
   return map(id, {
     center,
+    dragging,
     layers,
     zoom,
     maxZoom,
