@@ -133,6 +133,15 @@ export function addPopup({
     .openOn(map);
 }
 
+export function addScaleControl({
+  map,
+  maxWidth = 100,
+}) {
+  control
+    .scale({ maxWidth })
+    .addTo(map);
+}
+
 export function createTileLayer({
   attribution,
   urlTemplate,
