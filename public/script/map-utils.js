@@ -181,11 +181,15 @@ export function createMap({
   onClick = () => {
   },
   zoom,
+  zoomMax: maxZoom,
+  zoomMin: minZoom,
 }) {
   return map(id, {
     center,
     layers,
-    zoom
+    zoom,
+    maxZoom,
+    minZoom,
   }).on(
     'click',
     onClick
