@@ -193,6 +193,10 @@ export function createDomElement({ name, style }) {
   );
 
   return {
+    appendChild(node) {
+      element.appendChild(node);
+      return node;
+    },
     element,
     setInnerHtml(innerHtml) {
       element.innerHTML = innerHtml;
