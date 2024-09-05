@@ -228,6 +228,7 @@ export function createDomElement({ name, style }) {
 export function createMap({
   activeLayers: layers,
   center,
+  crs = CrsEpsg3857,
   dragging = true,
   id,
   onClick = () => {
@@ -240,6 +241,7 @@ export function createMap({
 }) {
   return map(id, {
     center,
+    crs,
     dragging,
     layers,
     maxZoom,
