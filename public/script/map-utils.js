@@ -4,7 +4,6 @@ import {
   circle,
   circleMarker,
   control,
-  DomUtil,
   geoJSON,
   icon,
   imageOverlay,
