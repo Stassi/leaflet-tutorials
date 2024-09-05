@@ -28,23 +28,27 @@ addTileLayer({
 addControl({
   map,
   onAdd() {
-    const {
-      appendChild: appendContainerChild,
-      element: container,
-    } = createDomElement({
-      name: 'div',
-      style: {
+    const [
+      {
+        appendChild: appendContainerChild,
+        element: container,
+      },
+      {
+        element: gauge,
+        setInnerHtml: setGaugeInnerHtml,
+      },
+    ] = [
+      {},
+      {
         background: 'rgba(255,255,255,0.5)',
         color: '#000',
         textAlign: 'left',
         width: '200px',
       },
-    });
-
-    const {
-      element: gauge,
-      setInnerHtml: setGaugeInnerHtml,
-    } = createDomElement({ name: 'div' });
+    ].map((style) => createDomElement({
+      name: 'div',
+      style,
+    }));
 
     map.on('zoom zoomend zoomstart', (_ev) => {
       setGaugeInnerHtml(`Zoom level: ${getMapZoom(map)}`);
