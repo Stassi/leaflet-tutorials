@@ -1,3 +1,7 @@
+export const attributionCarto = '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors ' +
+  '| &copy; <a href="https://carto.com/attribution" target="_blank">CARTO</a>';
+export const urlTemplateCarto = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png';
+
 export const attributionHot = '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> ' +
   'contributors | Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> ' +
   'hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>';

@@ -2,6 +2,7 @@ import {
   circle,
   circleMarker,
   control,
+  DomUtil,
   geoJSON,
   icon,
   map,
@@ -133,6 +134,15 @@ export function addPopup({
     .openOn(map);
 }
 
+export function addScaleControl({
+  map,
+  maxWidth = 100,
+}) {
+  control
+    .scale({ maxWidth })
+    .addTo(map);
+}
+
 export function createTileLayer({
   attribution,
   urlTemplate,
@@ -174,18 +184,49 @@ export function createCircleMarker({
   );
 }
 
+export function createDomElement({ name, style }) {
+  const element = DomUtil.create(name);
+
+  Object.assign(
+    element.style,
+    style,
+  );
+
+  return {
+    appendChild(node) {
+      element.appendChild(node);
+      return node;
+    },
+    element,
+    setInnerHtml(innerHtml) {
+      element.innerHTML = innerHtml;
+      return innerHtml;
+    },
+  };
+}
+
 export function createMap({
   activeLayers: layers,
   center,
+  dragging = true,
   id,
   onClick = () => {
   },
   zoom,
+  zoomDelta = 1,
+  zoomMax: maxZoom,
+  zoomMin: minZoom,
+  zoomSnap = 1,
 }) {
   return map(id, {
     center,
+    dragging,
     layers,
-    zoom
+    maxZoom,
+    minZoom,
+    zoom,
+    zoomDelta,
+    zoomSnap,
   }).on(
     'click',
     onClick
@@ -211,4 +252,32 @@ export function createWorldLocatorMap({
       'locationfound',
       onLocate
     )
+}
+
+export function getMapZoom(map) {
+  return map.getZoom()
+}
+
+export function setMapView({
+  center,
+  map,
+  zoom,
+  zoomPanOptions,
+}) {
+  return map.setView(
+    center,
+    zoom,
+    zoomPanOptions,
+  );
+}
+
+export function setMapZoom({
+  map,
+  zoom,
+  zoomPanOptions,
+}) {
+  return map.setZoom(
+    zoom,
+    zoomPanOptions,
+  );
 }
