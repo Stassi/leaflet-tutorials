@@ -215,14 +215,16 @@ export function createMap({
   zoom,
   zoomMax: maxZoom,
   zoomMin: minZoom,
+  zoomSnap = 1,
 }) {
   return map(id, {
     center,
     dragging,
     layers,
-    zoom,
     maxZoom,
     minZoom,
+    zoom,
+    zoomSnap,
   }).on(
     'click',
     onClick
