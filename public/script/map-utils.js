@@ -1,4 +1,6 @@
 import {
+  CRS,
+  DomUtil,
   circle,
   circleMarker,
   control,
@@ -14,9 +16,16 @@ import {
 } from '../leaflet/leaflet-src.esm.js'
 
 export {
+  CRS,
   DomUtil,
   layerGroup as createLayerGroup,
 } from '../leaflet/leaflet-src.esm.js';
+
+const {
+  Simple: CrsSimple,
+  EPSG3857: CrsEpsg3857,
+} = CRS;
+export { CrsSimple };
 
 export function addCircle({
   color = '#3388ff',
