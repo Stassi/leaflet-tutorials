@@ -4,6 +4,7 @@ import {
   createDomElement,
   createMap,
   getMapZoom,
+  setMapZoom,
 } from './map-utils.js';
 import {
   attributionCarto,
@@ -17,6 +18,7 @@ const map = createMap({
   zoom: 0,
   zoomMax: 1,
   zoomMin: 0,
+  zoomSnap: 0.25,
 });
 
 addTileLayer({
@@ -58,3 +60,29 @@ addControl({
     return container;
   },
 });
+
+function zoomCycle() {
+  [
+    0,
+    0.25,
+    0.50,
+    0.75,
+    1.00,
+    0.75,
+    0.50,
+    0.25,
+  ].forEach((zoom, index) => {
+    setTimeout(
+      () => {
+        setMapZoom({
+          map,
+          zoom,
+        });
+      },
+      index * 1000,
+    );
+  });
+}
+
+zoomCycle();
+setInterval(zoomCycle, 8000);
