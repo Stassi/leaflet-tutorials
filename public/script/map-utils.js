@@ -196,6 +196,7 @@ export function createDomElement({ name, style }) {
     element,
     setInnerHtml(innerHtml) {
       element.innerHTML = innerHtml;
+      return innerHtml;
     },
   };
 }
