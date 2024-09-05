@@ -5,6 +5,7 @@ import {
   DomUtil,
   geoJSON,
   icon,
+  imageOverlay,
   map,
   marker,
   polygon,
@@ -73,6 +74,17 @@ export function addGeoJson({
       pointToLayer,
       style,
     },
+  ).addTo(map);
+}
+
+export function addImageOverlay({
+  bounds,
+  imageUrl,
+  map,
+}) {
+  return imageOverlay(
+    imageUrl,
+    bounds,
   ).addTo(map);
 }
 
