@@ -213,6 +213,7 @@ export function createMap({
   onClick = () => {
   },
   zoom,
+  zoomDelta = 1,
   zoomMax: maxZoom,
   zoomMin: minZoom,
   zoomSnap = 1,
@@ -224,6 +225,7 @@ export function createMap({
     maxZoom,
     minZoom,
     zoom,
+    zoomDelta,
     zoomSnap,
   }).on(
     'click',
