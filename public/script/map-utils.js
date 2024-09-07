@@ -10,6 +10,7 @@ import {
   map,
   marker,
   polygon,
+  polyline,
   popup,
   tileLayer,
 } from '../leaflet/leaflet-src.esm.js'
@@ -105,6 +106,13 @@ export function addLayersControl({
     baseLayers,
     overlays,
   ).addTo(map);
+}
+
+export function addPolyline({
+  latitudeLongitudes,
+  map,
+}) {
+  return polyline(latitudeLongitudes).addTo(map);
 }
 
 export function createMarker({
