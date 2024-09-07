@@ -22,6 +22,8 @@ export {
   layerGroup as createLayerGroup,
 } from '../leaflet/leaflet-src.esm.js';
 
+const { wms: wmsTileLayer } = tileLayer;
+
 const {
   Simple: CrsSimple,
   EPSG3857: CrsEpsg3857,
@@ -114,6 +116,17 @@ export function addPolyline({
   map,
 }) {
   return polyline(latitudeLongitudes).addTo(map);
+}
+
+export function addWmsTileLayer({
+  baseUrl,
+  layers,
+  map,
+}) {
+  return wmsTileLayer(
+    baseUrl,
+    { layers },
+  ).addTo(map);
 }
 
 export function createMarker({
