@@ -7,6 +7,7 @@ import {
   geoJSON,
   icon,
   imageOverlay,
+  latLng as latitudeLongitude,
   map,
   marker,
   polygon,
@@ -293,6 +294,13 @@ export function fitMapBounds({
 
 export function getMapZoom(map) {
   return map.getZoom()
+}
+
+export function longitudeLatitude(x, y) {
+  return latitudeLongitude(
+    Array.isArray(x) ? x[1] : y,
+    Array.isArray(x) ? x[0] : x,
+  );
 }
 
 export function setMapView({
