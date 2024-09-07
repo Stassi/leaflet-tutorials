@@ -1,21 +1,32 @@
 import {
+  CRS,
+  DomUtil,
   circle,
   circleMarker,
   control,
-  DomUtil,
   geoJSON,
   icon,
+  imageOverlay,
+  latLng as latitudeLongitude,
   map,
   marker,
   polygon,
+  polyline,
   popup,
   tileLayer,
 } from '../leaflet/leaflet-src.esm.js'
 
 export {
+  CRS,
   DomUtil,
   layerGroup as createLayerGroup,
 } from '../leaflet/leaflet-src.esm.js';
+
+const {
+  Simple: CrsSimple,
+  EPSG3857: CrsEpsg3857,
+} = CRS;
+export { CrsSimple };
 
 export function addCircle({
   color = '#3388ff',
@@ -76,6 +87,17 @@ export function addGeoJson({
   ).addTo(map);
 }
 
+export function addImageOverlay({
+  bounds,
+  imageUrl,
+  map,
+}) {
+  return imageOverlay(
+    imageUrl,
+    bounds,
+  ).addTo(map);
+}
+
 export function addLayersControl({
   baseLayers,
   map,
@@ -85,6 +107,13 @@ export function addLayersControl({
     baseLayers,
     overlays,
   ).addTo(map);
+}
+
+export function addPolyline({
+  latitudeLongitudes,
+  map,
+}) {
+  return polyline(latitudeLongitudes).addTo(map);
 }
 
 export function createMarker({
@@ -208,6 +237,7 @@ export function createDomElement({ name, style }) {
 export function createMap({
   activeLayers: layers,
   center,
+  crs = CrsEpsg3857,
   dragging = true,
   id,
   onClick = () => {
@@ -220,6 +250,7 @@ export function createMap({
 }) {
   return map(id, {
     center,
+    crs,
     dragging,
     layers,
     maxZoom,
@@ -254,8 +285,22 @@ export function createWorldLocatorMap({
     )
 }
 
+export function fitMapBounds({
+  bounds,
+  map,
+}) {
+  return map.fitBounds(bounds);
+}
+
 export function getMapZoom(map) {
   return map.getZoom()
+}
+
+export function longitudeLatitude(x, y) {
+  return latitudeLongitude(
+    Array.isArray(x) ? x[1] : y,
+    Array.isArray(x) ? x[0] : x,
+  );
 }
 
 export function setMapView({
