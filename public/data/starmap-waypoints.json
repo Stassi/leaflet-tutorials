@@ -1,0 +1,30 @@
+[
+  {
+    "longitudeLatitude": [
+      218.7,
+      8.3
+    ],
+    "name": "Deneb"
+  },
+  {
+    "longitudeLatitude": [
+      13.4,
+      56.5
+    ],
+    "name": "Krueger-Z"
+  },
+  {
+    "longitudeLatitude": [
+      41.6,
+      130.1
+    ],
+    "name": "Mizar"
+  },
+  {
+    "longitudeLatitude": [
+      175.2,
+      145
+    ],
+    "name": "Sol"
+  }
+]
