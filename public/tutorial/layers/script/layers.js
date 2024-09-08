@@ -3,7 +3,7 @@ import {
   createMap,
   createMarker,
   createTileLayer,
-} from '../../../leaflet-adapter/map-utils.js';
+} from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { layers } from '../../../leaflet-adapter/control/layers.js';
 import {
   attributionHot,

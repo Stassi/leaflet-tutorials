@@ -3,7 +3,7 @@ import {
   addMarker,
   createMap,
   setMapView,
-} from '../../../leaflet-adapter/map-utils.js';
+} from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { imageOverlay } from '../../../leaflet-adapter/image-overlay.js';
 
 const map = createMap({

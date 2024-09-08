@@ -4,7 +4,7 @@ import {
   createMap,
   longitudeLatitude as xy,
   setMapView,
-} from '../../../leaflet-adapter/map-utils.js';
+} from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { imageOverlay } from '../../../leaflet-adapter/image-overlay.js';
 import { polyline } from '../../../leaflet-adapter/polyline.js';
 import waypoints from '../data/starmap-waypoints.json' with { type: 'json' };

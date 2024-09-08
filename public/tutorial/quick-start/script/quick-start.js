@@ -3,7 +3,7 @@ import {
   addPopup,
   addTileLayer,
   createMap,
-} from '../../../leaflet-adapter/map-utils.js';
+} from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { circle } from '../../../leaflet-adapter/circle.js';
 import { polygon } from '../../../leaflet-adapter/polygon.js';
 import {

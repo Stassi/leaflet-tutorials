@@ -4,7 +4,7 @@ import {
   createMap,
   getMapZoom,
   setMapZoom,
-} from '../../../leaflet-adapter/map-utils.js';
+} from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { control } from '../../../leaflet-adapter/control/control.js';
 import {
   attributionCarto,
