@@ -43,9 +43,7 @@ const baseLayers = Object.fromEntries(
       urlTemplate,
     }),
   ])
-);
-
-const overlays = Object.fromEntries(
+), overlays = Object.fromEntries(
   [
     {
       data: [
