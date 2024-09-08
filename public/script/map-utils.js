@@ -102,12 +102,14 @@ export function addImageOverlay({
 
 export function addLayersControl({
   baseLayers,
+  collapsed = true,
   map,
   overlays,
 }) {
   return control.layers(
     baseLayers,
     overlays,
+    { collapsed },
   ).addTo(map);
 }
 
