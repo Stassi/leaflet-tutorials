@@ -1,10 +1,10 @@
 import {
-  addLayersControl,
   createLayerGroup,
   createMap,
   createMarker,
   createTileLayer,
 } from '../../../leaflet-adapter/map-utils.js';
+import { layers } from '../../../leaflet-adapter/control/layers.js';
 import {
   attributionHot,
   attributionOsm,
@@ -101,7 +101,7 @@ const overlays = Object.fromEntries(
   ])
 );
 
-addLayersControl({
+layers({
   baseLayers,
   map: createMap({
     activeLayers: [

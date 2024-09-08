@@ -1,8 +1,8 @@
 import {
-  addLayersControl,
   createMap,
   wmsTileLayer,
 } from '../../../leaflet-adapter/map-utils.js';
+import { layers } from '../../../leaflet-adapter/control/layers.js';
 
 const map = createMap({
   center: [-17, -67],
@@ -10,7 +10,7 @@ const map = createMap({
   zoom: 3,
 });
 
-addLayersControl({
+layers({
   baseLayers: Object.fromEntries(
     [
       {
