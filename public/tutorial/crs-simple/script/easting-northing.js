@@ -1,12 +1,12 @@
 import {
   CrsSimple,
   addMarker,
-  addPolyline,
   createMap,
   longitudeLatitude as xy,
   setMapView,
 } from '../../../leaflet-adapter/map-utils.js';
 import { imageOverlay } from '../../../leaflet-adapter/imageOverlay.js';
+import { polyline } from '../../../leaflet-adapter/polyline.js';
 import waypoints from '../data/starmap-waypoints.json' with { type: 'json' };
 
 const map = createMap({
@@ -41,7 +41,7 @@ waypoints.forEach(({
   });
 });
 
-addPolyline({
+polyline({
   latitudeLongitudes: waypoints
     .filter(
       ({ name }) => ['Deneb', 'Sol'].includes(name)
