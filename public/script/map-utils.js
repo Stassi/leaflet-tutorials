@@ -301,9 +301,10 @@ export function getMapZoom(map) {
 }
 
 export function longitudeLatitude(x, y) {
+  const firstParameterIsArray = Array.isArray(x);
   return latitudeLongitude(
-    Array.isArray(x) ? x[1] : y,
-    Array.isArray(x) ? x[0] : x,
+    firstParameterIsArray ? x[1] : y,
+    firstParameterIsArray ? x[0] : x,
   );
 }
 
