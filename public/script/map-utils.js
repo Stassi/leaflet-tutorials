@@ -27,8 +27,12 @@ const { wms: leafletWmsTileLayer } = tileLayer;
 const {
   Simple: CrsSimple,
   EPSG3857: CrsEpsg3857,
+  EPSG4326: CrsEpsg4326,
 } = CRS;
-export { CrsSimple };
+export {
+  CrsEpsg4326,
+  CrsSimple,
+};
 
 export function addCircle({
   color = '#3388ff',
