@@ -6,8 +6,8 @@ import {
   createMap,
   longitudeLatitude as xy,
   setMapView,
-} from './map-utils.js';
-import waypoints from '../data/starmap-waypoints.json' with { type: 'json' };
+} from '../../../script/map-utils.js';
+import waypoints from '../../../data/starmap-waypoints.json' with { type: 'json' };
 
 const map = createMap({
   crs: CrsSimple,
@@ -20,7 +20,7 @@ addImageOverlay({
     [-25, -26.5],
     [1023, 1021.5],
   ].map(xy),
-  imageUrl: 'image/uqm-map-full.png',
+  imageUrl: 'image/uqm-starmap.png',
   map,
 });
 

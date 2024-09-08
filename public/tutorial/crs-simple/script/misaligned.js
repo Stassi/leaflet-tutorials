@@ -3,7 +3,7 @@ import {
   addImageOverlay,
   createMap,
   fitMapBounds,
-} from './map-utils.js';
+} from '../../../script/map-utils.js';
 
 const mapBoundsOptions = {
   bounds: [
@@ -17,7 +17,7 @@ const mapBoundsOptions = {
 };
 
 addImageOverlay({
-  imageUrl: 'image/uqm-map-full.png',
+  imageUrl: 'image/uqm-starmap.png',
   ...mapBoundsOptions,
 })
 

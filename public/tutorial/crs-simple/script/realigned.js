@@ -4,7 +4,7 @@ import {
   addMarker,
   createMap,
   setMapView,
-} from './map-utils.js';
+} from '../../../script/map-utils.js';
 
 const map = createMap({
   crs: CrsSimple,
@@ -17,7 +17,7 @@ addImageOverlay({
     [-26.5, -25],
     [1021.5, 1023],
   ],
-  imageUrl: 'image/uqm-map-full.png',
+  imageUrl: 'image/uqm-starmap.png',
   map,
 });
 
