@@ -22,7 +22,7 @@ export {
   layerGroup as createLayerGroup,
 } from '../leaflet/leaflet-src.esm.js';
 
-const { wms: wmsTileLayer } = tileLayer;
+const { wms: leafletWmsTileLayer } = tileLayer;
 
 const {
   Simple: CrsSimple,
@@ -118,17 +118,6 @@ export function addPolyline({
   map,
 }) {
   return polyline(latitudeLongitudes).addTo(map);
-}
-
-export function addWmsTileLayer({
-  baseUrl,
-  layers,
-  map,
-}) {
-  return wmsTileLayer(
-    baseUrl,
-    { layers },
-  ).addTo(map);
 }
 
 export function createMarker({
@@ -340,4 +329,19 @@ export function setMapZoom({
     zoom,
     zoomPanOptions,
   );
+}
+
+export function wmsTileLayer({
+  baseUrl,
+  layers,
+  map,
+}) {
+  const created = leafletWmsTileLayer(
+    baseUrl,
+    { layers },
+  );
+
+  return map
+    ? created.addTo(map)
+    : created;
 }
