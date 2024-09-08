@@ -1,8 +1,8 @@
 import {
   addTileLayer,
-  createCircleMarker,
   createMap,
 } from '../../../leaflet-adapter/map-utils.js';
+import { circleMarker } from '../../../leaflet-adapter/circleMarker.js';
 import { geoJson as leafletGeoJson } from '../../../leaflet-adapter/geoJson.js';
 import {
   attributionOsm,
@@ -43,7 +43,7 @@ leafletGeoJson({
     if (popupContent && !underConstruction) layer.bindPopup(popupContent);
   },
   pointToLayer(_feature, latitudeLongitude) {
-    return createCircleMarker({
+    return circleMarker({
       color: '#000',
       fillColor: '#ff7800',
       fillOpacity: 0.8,
