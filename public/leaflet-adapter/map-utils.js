@@ -7,7 +7,6 @@ import {
   map,
   marker,
   polygon,
-  polyline,
   popup,
   tileLayer,
 } from '../leaflet/leaflet-src.esm.js'
@@ -29,13 +28,6 @@ export {
   CrsEpsg4326,
   CrsSimple,
 };
-
-export function addPolyline({
-  latitudeLongitudes,
-  map,
-}) {
-  return polyline(latitudeLongitudes).addTo(map);
-}
 
 export function createMarker({
   altText: alt = 'Marker',
