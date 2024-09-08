@@ -22,11 +22,17 @@ export {
   layerGroup as createLayerGroup,
 } from '../leaflet/leaflet-src.esm.js';
 
+const { wms: leafletWmsTileLayer } = tileLayer;
+
 const {
   Simple: CrsSimple,
   EPSG3857: CrsEpsg3857,
+  EPSG4326: CrsEpsg4326,
 } = CRS;
-export { CrsSimple };
+export {
+  CrsEpsg4326,
+  CrsSimple,
+};
 
 export function addCircle({
   color = '#3388ff',
@@ -100,12 +106,14 @@ export function addImageOverlay({
 
 export function addLayersControl({
   baseLayers,
+  collapsed = true,
   map,
   overlays,
 }) {
   return control.layers(
     baseLayers,
     overlays,
+    { collapsed },
   ).addTo(map);
 }
 
@@ -297,9 +305,10 @@ export function getMapZoom(map) {
 }
 
 export function longitudeLatitude(x, y) {
+  const firstParameterIsArray = Array.isArray(x);
   return latitudeLongitude(
-    Array.isArray(x) ? x[1] : y,
-    Array.isArray(x) ? x[0] : x,
+    firstParameterIsArray ? x[1] : y,
+    firstParameterIsArray ? x[0] : x,
   );
 }
 
@@ -325,4 +334,19 @@ export function setMapZoom({
     zoom,
     zoomPanOptions,
   );
+}
+
+export function wmsTileLayer({
+  baseUrl,
+  layers,
+  map,
+}) {
+  const created = leafletWmsTileLayer(
+    baseUrl,
+    { layers },
+  );
+
+  return map
+    ? created.addTo(map)
+    : created;
 }
