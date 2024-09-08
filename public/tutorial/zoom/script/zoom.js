@@ -2,8 +2,8 @@ import {
   addControl,
   addTileLayer,
   createDomElement,
-  getMapZoom
-} from '../../../script/map-utils.js';
+  getMapZoom,
+} from '../../../leaflet-adapter/map-utils.js';
 import { attributionCarto, urlTemplateCarto } from '../../../script/base-layers.js';
 
 function addCartoTileLayer(map) {

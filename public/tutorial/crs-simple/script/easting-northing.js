@@ -6,7 +6,7 @@ import {
   createMap,
   longitudeLatitude as xy,
   setMapView,
-} from '../../../script/map-utils.js';
+} from '../../../leaflet-adapter/map-utils.js';
 import waypoints from '../data/starmap-waypoints.json' with { type: 'json' };
 
 const map = createMap({

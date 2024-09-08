@@ -4,7 +4,7 @@ import {
   addMarker,
   createMap,
   setMapView,
-} from '../../../script/map-utils.js';
+} from '../../../leaflet-adapter/map-utils.js';
 
 const map = createMap({
   crs: CrsSimple,

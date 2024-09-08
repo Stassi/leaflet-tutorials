@@ -1,7 +1,7 @@
 import {
   createMap,
   setMapZoom,
-} from '../../../script/map-utils.js';
+} from '../../../leaflet-adapter/map-utils.js';
 import { addCartoTileLayerWithZoomLevelControl } from './zoom.js';
 
 const map = createMap({

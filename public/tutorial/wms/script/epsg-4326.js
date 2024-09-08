@@ -2,7 +2,7 @@ import {
   CrsEpsg4326,
   createMap,
   wmsTileLayer,
-} from '../../../script/map-utils.js';
+} from '../../../leaflet-adapter/map-utils.js';
 
 wmsTileLayer({
   baseUrl: 'https://ows.mundialis.de/services/service?',

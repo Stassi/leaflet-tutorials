@@ -4,7 +4,7 @@ import {
   createMap,
   createMarker,
   createTileLayer,
-} from '../../../script/map-utils.js';
+} from '../../../leaflet-adapter/map-utils.js';
 import {
   attributionHot,
   attributionOsm,

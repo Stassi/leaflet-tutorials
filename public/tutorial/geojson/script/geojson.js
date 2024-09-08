@@ -3,7 +3,7 @@ import {
   addTileLayer,
   createCircleMarker,
   createMap,
-} from '../../../script/map-utils.js';
+} from '../../../leaflet-adapter/map-utils.js';
 import {
   attributionOsm,
   urlTemplateOsm,

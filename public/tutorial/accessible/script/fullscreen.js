@@ -1,7 +1,7 @@
 import {
   addMarker,
   addTileLayer,
-} from '../../../script/map-utils.js';
+} from '../../../leaflet-adapter/map-utils.js';
 import { createFullscreenMap } from '../../../script/leaflet-fullscreen.js';
 import {
   attributionOsm,

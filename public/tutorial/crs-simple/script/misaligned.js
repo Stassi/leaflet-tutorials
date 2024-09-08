@@ -3,7 +3,7 @@ import {
   addImageOverlay,
   createMap,
   fitMapBounds,
-} from '../../../script/map-utils.js';
+} from '../../../leaflet-adapter/map-utils.js';
 
 const mapBoundsOptions = {
   bounds: [

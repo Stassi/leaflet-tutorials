@@ -2,7 +2,7 @@ import {
   addLayersControl,
   createMap,
   wmsTileLayer,
-} from '../../../script/map-utils.js';
+} from '../../../leaflet-adapter/map-utils.js';
 
 const map = createMap({
   center: [-17, -67],

@@ -2,8 +2,8 @@ import {
   addCircle,
   addMarker,
   addTileLayer,
-  createWorldLocatorMap
-} from '../../../script/map-utils.js';
+  createWorldLocatorMap,
+} from '../../../leaflet-adapter/map-utils.js';
 import {
   attributionOsm,
   urlTemplateOsm,

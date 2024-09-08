@@ -5,7 +5,7 @@ import {
   createMap,
   getMapZoom,
   setMapZoom,
-} from '../../../script/map-utils.js';
+} from '../../../leaflet-adapter/map-utils.js';
 import {
   attributionCarto,
   urlTemplateCarto,
