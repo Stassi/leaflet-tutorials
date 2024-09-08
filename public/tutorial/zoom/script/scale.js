@@ -1,9 +1,9 @@
 import {
-  addScaleControl,
   addTileLayer,
   createMap,
   setMapView,
 } from '../../../leaflet-adapter/map-utils.js';
+import { scale } from '../../../leaflet-adapter/control/scale.js';
 import {
   attributionCarto,
   urlTemplateCarto,
@@ -18,7 +18,7 @@ const map = createMap({
   zoomMin: 1,
 });
 
-addScaleControl({
+scale({
   map,
   maxWidth: 150,
 });
