@@ -4,7 +4,7 @@ import {
   createMap,
   createMarker,
   createTileLayer,
-} from './map-utils.js';
+} from '../../../script/map-utils.js';
 import {
   attributionHot,
   attributionOsm,
@@ -12,7 +12,7 @@ import {
   urlTemplateHot,
   urlTemplateOsm,
   urlTemplateOTopo,
-} from './base-layers.js';
+} from '../../../script/base-layers.js';
 
 const baseLayers = Object.fromEntries(
   [
