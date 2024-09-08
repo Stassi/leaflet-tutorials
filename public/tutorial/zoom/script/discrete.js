@@ -1,11 +1,11 @@
 import {
-  addControl,
   addTileLayer,
   createDomElement,
   createMap,
   getMapZoom,
   setMapZoom,
 } from '../../../leaflet-adapter/map-utils.js';
+import { control } from '../../../leaflet-adapter/control/control.js';
 import {
   attributionCarto,
   urlTemplateCarto,
@@ -40,7 +40,7 @@ setInterval(() => {
   }, 2000);
 }, 4000);
 
-addControl({
+control({
   map,
   onAdd() {
     const {

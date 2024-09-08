@@ -1,10 +1,10 @@
 import {
   DomUtil,
-  addControl,
   addGeoJson,
   addTileLayer,
   createMap,
 } from '../../../leaflet-adapter/map-utils.js';
+import { control } from '../../../leaflet-adapter/control/control.js';
 import {
   attributionOsm,
   urlTemplateOsm,
@@ -45,7 +45,7 @@ function getColor(density) {
                 '#FFEDA0';
 }
 
-addControl({
+control({
   map,
   onAdd(_map) {
     const div = DomUtil.create(
@@ -68,7 +68,7 @@ addControl({
   position: 'bottomright',
 });
 
-const info = addControl({
+const info = control({
   map,
   onAdd(_map) {
     this._div = DomUtil.create(

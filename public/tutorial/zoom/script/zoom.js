@@ -1,10 +1,13 @@
 import {
-  addControl,
   addTileLayer,
   createDomElement,
   getMapZoom,
 } from '../../../leaflet-adapter/map-utils.js';
-import { attributionCarto, urlTemplateCarto } from '../../../script/base-layers.js';
+import { control } from '../../../leaflet-adapter/control/control.js';
+import {
+  attributionCarto,
+  urlTemplateCarto,
+} from '../../../script/base-layers.js';
 
 function addCartoTileLayer(map) {
   addTileLayer({
@@ -15,7 +18,7 @@ function addCartoTileLayer(map) {
 }
 
 function addZoomLevelControl(map) {
-  addControl({
+  control({
     map,
     onAdd() {
       const [
