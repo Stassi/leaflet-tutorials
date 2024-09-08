@@ -5,10 +5,9 @@ import {
   latLng as latitudeLongitude,
   map,
   marker,
-  polygon,
   popup,
   tileLayer,
-} from '../leaflet/leaflet-src.esm.js'
+} from '../leaflet/leaflet-src.esm.js';
 
 export {
   CRS,
@@ -52,16 +51,6 @@ export function createMarker({
 export function addMarker({ map, ...props }) {
   return createMarker({ ...props })
     .addTo(map);
-}
-
-export function addPolygon({
-  latitudeLongitudes,
-  map,
-  popupContent
-}) {
-  return polygon(latitudeLongitudes)
-    .addTo(map)
-    .bindPopup(popupContent);
 }
 
 export function addPopup({
