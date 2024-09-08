@@ -1,10 +1,10 @@
 import {
-  addWmsTileLayer,
   createMap,
+  wmsTileLayer,
 } from './map-utils.js';
 
-addWmsTileLayer({
-  baseUrl: 'http://ows.mundialis.de/services/service?',
+wmsTileLayer({
+  baseUrl: 'https://ows.mundialis.de/services/service?',
   layers: 'TOPO-OSM-WMS',
   map: createMap({
     center: [-17, -67],
