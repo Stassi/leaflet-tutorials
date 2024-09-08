@@ -2,11 +2,11 @@ import {
   addMarker,
   addTileLayer,
   createMap,
-} from './map-utils.js';
+} from '../../../script/map-utils.js';
 import {
   attributionOsm,
   urlTemplateOsm,
-} from './base-layers.js';
+} from '../../../script/base-layers.js';
 
 const map = createMap({
   center: [51.5, -0.09],
@@ -22,17 +22,17 @@ addTileLayer({
 
 [
   {
-    iconUrl: 'image/leaf/green.png',
+    iconUrl: 'image/green.png',
     latitudeLongitude: [51.5, -0.09],
     popupContent: 'I am a green leaf.',
   },
   {
-    iconUrl: 'image/leaf/orange.png',
+    iconUrl: 'image/orange.png',
     latitudeLongitude: [51.49, -0.1],
     popupContent: 'I am an orange leaf.',
   },
   {
-    iconUrl: 'image/leaf/red.png',
+    iconUrl: 'image/red.png',
     latitudeLongitude: [51.495, -0.083],
     popupContent: 'I am a red leaf.',
   }
@@ -49,7 +49,7 @@ addTileLayer({
       popupAnchor: [-3, -76],
       shadowAnchor: [4, 62],
       shadowSize: [50, 64],
-      shadowUrl: 'image/leaf/shadow.png',
+      shadowUrl: 'image/shadow.png',
     },
     latitudeLongitude,
     map,
