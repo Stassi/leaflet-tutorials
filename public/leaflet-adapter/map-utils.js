@@ -1,7 +1,6 @@
 import {
   CRS,
   DomUtil,
-  circle,
   circleMarker,
   control,
   geoJSON,
@@ -33,27 +32,6 @@ export {
   CrsEpsg4326,
   CrsSimple,
 };
-
-export function addCircle({
-  color = '#3388ff',
-  fillColor = '#3388ff',
-  fillOpacity = 0.2,
-  latitudeLongitude,
-  map,
-  popupContent,
-  radius
-}) {
-  const shape = circle(latitudeLongitude, {
-    color,
-    fillColor,
-    fillOpacity,
-    radius
-  }).addTo(map);
-
-  return popupContent
-    ? shape.bindPopup(popupContent)
-    : shape;
-}
 
 export function addControl({
   map,
