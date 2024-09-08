@@ -2,7 +2,6 @@ import {
   CRS,
   DomUtil,
   circleMarker,
-  control,
   geoJSON,
   icon,
   imageOverlay,
@@ -33,25 +32,6 @@ export {
   CrsSimple,
 };
 
-export function addControl({
-  map,
-  onAdd,
-  position = 'topright',
-  update,
-}) {
-  const createdControl = control({ position });
-
-  createdControl.onAdd = onAdd
-    ? onAdd
-    : createdControl.onAdd;
-
-  createdControl.update = update
-    ? update
-    : createdControl.update;
-
-  return createdControl.addTo(map);
-}
-
 export function addGeoJson({
   data,
   filter,
@@ -79,19 +59,6 @@ export function addImageOverlay({
   return imageOverlay(
     imageUrl,
     bounds,
-  ).addTo(map);
-}
-
-export function addLayersControl({
-  baseLayers,
-  collapsed = true,
-  map,
-  overlays,
-}) {
-  return control.layers(
-    baseLayers,
-    overlays,
-    { collapsed },
   ).addTo(map);
 }
 
@@ -147,15 +114,6 @@ export function addPopup({
     .setLatLng(latitudeLongitude)
     .setContent(htmlContent)
     .openOn(map);
-}
-
-export function addScaleControl({
-  map,
-  maxWidth = 100,
-}) {
-  control
-    .scale({ maxWidth })
-    .addTo(map);
 }
 
 export function createTileLayer({
