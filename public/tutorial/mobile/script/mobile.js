@@ -3,8 +3,11 @@ import {
   addMarker,
   addTileLayer,
   createWorldLocatorMap
-} from './map-utils.js';
-import { attributionOsm, urlTemplateOsm } from './base-layers.js';
+} from '../../../script/map-utils.js';
+import {
+  attributionOsm,
+  urlTemplateOsm,
+} from '../../../script/base-layers.js';
 
 const map = createWorldLocatorMap({
   id: 'map',
