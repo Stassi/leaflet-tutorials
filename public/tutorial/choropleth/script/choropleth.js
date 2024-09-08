@@ -4,7 +4,7 @@ import {
   createMap,
 } from '../../../leaflet-adapter/map-utils.js';
 import { control } from '../../../leaflet-adapter/control/control.js';
-import { geoJson as leafletGeoJson } from '../../../leaflet-adapter/geoJson.js';
+import { geoJson as leafletGeoJson } from '../../../leaflet-adapter/geo-json.js';
 import {
   attributionOsm,
   urlTemplateOsm,

@@ -2,8 +2,8 @@ import {
   addTileLayer,
   createMap,
 } from '../../../leaflet-adapter/map-utils.js';
-import { circleMarker } from '../../../leaflet-adapter/circleMarker.js';
-import { geoJson as leafletGeoJson } from '../../../leaflet-adapter/geoJson.js';
+import { circleMarker } from '../../../leaflet-adapter/circle-marker.js';
+import { geoJson as leafletGeoJson } from '../../../leaflet-adapter/geo-json.js';
 import {
   attributionOsm,
   urlTemplateOsm,

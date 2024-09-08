@@ -4,7 +4,7 @@ import {
   createMap,
   setMapView,
 } from '../../../leaflet-adapter/map-utils.js';
-import { imageOverlay } from '../../../leaflet-adapter/imageOverlay.js';
+import { imageOverlay } from '../../../leaflet-adapter/image-overlay.js';
 
 const map = createMap({
   crs: CrsSimple,
