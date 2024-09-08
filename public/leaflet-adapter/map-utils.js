@@ -2,7 +2,6 @@ import {
   CRS,
   DomUtil,
   circleMarker,
-  geoJSON,
   icon,
   imageOverlay,
   latLng as latitudeLongitude,
@@ -31,25 +30,6 @@ export {
   CrsEpsg4326,
   CrsSimple,
 };
-
-export function addGeoJson({
-  data,
-  filter,
-  map,
-  onEachFeature,
-  pointToLayer,
-  style,
-}) {
-  return geoJSON(
-    data,
-    {
-      filter,
-      onEachFeature,
-      pointToLayer,
-      style,
-    },
-  ).addTo(map);
-}
 
 export function addImageOverlay({
   bounds,
