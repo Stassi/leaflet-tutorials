@@ -1,4 +1,4 @@
-import { createMap } from './map-utils.js';
+import { createMap } from '../../../script/map-utils.js';
 import { addCartoTileLayerWithZoomLevelControl } from './zoom.js';
 
 addCartoTileLayerWithZoomLevelControl(

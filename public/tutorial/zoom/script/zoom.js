@@ -3,8 +3,8 @@ import {
   addTileLayer,
   createDomElement,
   getMapZoom
-} from './map-utils.js';
-import { attributionCarto, urlTemplateCarto } from './base-layers.js';
+} from '../../../script/map-utils.js';
+import { attributionCarto, urlTemplateCarto } from '../../../script/base-layers.js';
 
 function addCartoTileLayer(map) {
   addTileLayer({

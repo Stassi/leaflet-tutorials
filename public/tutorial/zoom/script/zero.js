@@ -1,11 +1,11 @@
 import {
   addTileLayer,
   createMap,
-} from './map-utils.js';
+} from '../../../script/map-utils.js';
 import {
   attributionCarto,
   urlTemplateCarto,
-} from './base-layers.js';
+} from '../../../script/base-layers.js';
 
 addTileLayer({
   attribution: attributionCarto,
