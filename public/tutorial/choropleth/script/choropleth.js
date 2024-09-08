@@ -1,10 +1,10 @@
 import {
   DomUtil,
-  addGeoJson,
   addTileLayer,
   createMap,
 } from '../../../leaflet-adapter/map-utils.js';
 import { control } from '../../../leaflet-adapter/control/control.js';
+import { geoJson as leafletGeoJson } from '../../../leaflet-adapter/geoJson.js';
 import {
   attributionOsm,
   urlTemplateOsm,
@@ -90,7 +90,7 @@ const info = control({
         : 'Hover over a state'
     }`;
   },
-}), geoJson = addGeoJson({
+}), geoJson = leafletGeoJson({
   data,
   map,
   onEachFeature(_feature, layer) {

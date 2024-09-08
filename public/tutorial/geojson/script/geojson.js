@@ -1,9 +1,9 @@
 import {
-  addGeoJson,
   addTileLayer,
   createCircleMarker,
   createMap,
 } from '../../../leaflet-adapter/map-utils.js';
+import { geoJson as leafletGeoJson } from '../../../leaflet-adapter/geoJson.js';
 import {
   attributionOsm,
   urlTemplateOsm,
@@ -13,7 +13,7 @@ import data from '../data/baseball-factions.json' with { type: 'json' };
 const map = createMap({
   center: [39.74739, -105],
   id: 'map',
-  zoom: 13
+  zoom: 13,
 });
 
 addTileLayer({
@@ -23,7 +23,7 @@ addTileLayer({
   zoomMax: 19,
 });
 
-addGeoJson({
+leafletGeoJson({
   data,
   filter({
     properties: { underConstruction } = {},
