@@ -1,7 +1,6 @@
 import {
   CRS,
   DomUtil,
-  circleMarker,
   icon,
   latLng as latitudeLongitude,
   map,
@@ -93,28 +92,6 @@ export function createTileLayer({
 export function addTileLayer({ map, ...props }) {
   return createTileLayer({ ...props })
     .addTo(map);
-}
-
-export function createCircleMarker({
-  color,
-  fillColor,
-  fillOpacity,
-  latitudeLongitude,
-  opacity,
-  radius,
-  weight,
-}) {
-  return circleMarker(
-    latitudeLongitude,
-    {
-      color,
-      fillColor,
-      fillOpacity,
-      opacity,
-      radius,
-      weight,
-    },
-  );
 }
 
 export function createDomElement({ name, style }) {
