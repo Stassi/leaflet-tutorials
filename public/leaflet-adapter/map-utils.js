@@ -3,7 +3,6 @@ import {
   DomUtil,
   circleMarker,
   icon,
-  imageOverlay,
   latLng as latitudeLongitude,
   map,
   marker,
@@ -30,17 +29,6 @@ export {
   CrsEpsg4326,
   CrsSimple,
 };
-
-export function addImageOverlay({
-  bounds,
-  imageUrl,
-  map,
-}) {
-  return imageOverlay(
-    imageUrl,
-    bounds,
-  ).addTo(map);
-}
 
 export function addPolyline({
   latitudeLongitudes,
