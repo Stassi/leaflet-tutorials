@@ -1,11 +1,11 @@
 import {
   addMarker,
-  addPolygon,
   addPopup,
   addTileLayer,
   createMap,
 } from '../../../leaflet-adapter/map-utils.js';
 import { circle } from '../../../leaflet-adapter/circle.js';
+import { polygon } from '../../../leaflet-adapter/polygon.js';
 import {
   attributionOsm,
   urlTemplateOsm,
@@ -47,7 +47,7 @@ circle({
   radius: 500,
 });
 
-addPolygon({
+polygon({
   latitudeLongitudes: [
     [51.509, -0.08],
     [51.503, -0.06],
