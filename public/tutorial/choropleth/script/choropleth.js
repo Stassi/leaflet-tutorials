@@ -4,8 +4,11 @@ import {
   addGeoJson,
   addTileLayer,
   createMap,
-} from './map-utils.js';
-import { attributionOsm, urlTemplateOsm } from './base-layers.js';
+} from '../../../script/map-utils.js';
+import {
+  attributionOsm,
+  urlTemplateOsm,
+} from '../../../script/base-layers.js';
 import data
   from '../data/us-state-population-density.json' with { type: 'json' };
 
