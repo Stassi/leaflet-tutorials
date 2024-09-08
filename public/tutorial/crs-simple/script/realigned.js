@@ -1,10 +1,10 @@
 import {
   CrsSimple,
-  addImageOverlay,
   addMarker,
   createMap,
   setMapView,
 } from '../../../leaflet-adapter/map-utils.js';
+import { imageOverlay } from '../../../leaflet-adapter/imageOverlay.js';
 
 const map = createMap({
   crs: CrsSimple,
@@ -12,7 +12,7 @@ const map = createMap({
   zoomMin: -3,
 });
 
-addImageOverlay({
+imageOverlay({
   bounds: [
     [-26.5, -25],
     [1021.5, 1023],

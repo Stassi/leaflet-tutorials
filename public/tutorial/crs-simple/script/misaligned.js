@@ -1,9 +1,9 @@
 import {
   CrsSimple,
-  addImageOverlay,
   createMap,
   fitMapBounds,
 } from '../../../leaflet-adapter/map-utils.js';
+import { imageOverlay } from '../../../leaflet-adapter/imageOverlay.js';
 
 const mapBoundsOptions = {
   bounds: [
@@ -16,7 +16,7 @@ const mapBoundsOptions = {
   }),
 };
 
-addImageOverlay({
+imageOverlay({
   imageUrl: 'image/uqm-starmap.png',
   ...mapBoundsOptions,
 })

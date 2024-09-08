@@ -1,12 +1,12 @@
 import {
   CrsSimple,
-  addImageOverlay,
   addMarker,
   addPolyline,
   createMap,
   longitudeLatitude as xy,
   setMapView,
 } from '../../../leaflet-adapter/map-utils.js';
+import { imageOverlay } from '../../../leaflet-adapter/imageOverlay.js';
 import waypoints from '../data/starmap-waypoints.json' with { type: 'json' };
 
 const map = createMap({
@@ -15,7 +15,7 @@ const map = createMap({
   zoomMin: -3,
 });
 
-addImageOverlay({
+imageOverlay({
   bounds: [
     [-25, -26.5],
     [1023, 1021.5],
