@@ -1,9 +1,9 @@
 import {
-  addCircle,
   addMarker,
   addTileLayer,
   createWorldLocatorMap,
 } from '../../../leaflet-adapter/map-utils.js';
+import { circle } from '../../../leaflet-adapter/circle.js';
 import {
   attributionOsm,
   urlTemplateOsm,
@@ -15,12 +15,12 @@ const map = createWorldLocatorMap({
   zoomMaxOnLocate: 16,
   onLocate: ({
     accuracy: radius,
-    latlng: latitudeLongitude
+    latlng: latitudeLongitude,
   }) => {
-    addCircle({
+    circle({
       latitudeLongitude,
       map,
-      radius
+      radius,
     });
 
     addMarker({
@@ -38,5 +38,5 @@ addTileLayer({
   attribution: attributionOsm,
   map,
   urlTemplate: urlTemplateOsm,
-  zoomMax: 19
+  zoomMax: 19,
 });

@@ -1,11 +1,11 @@
 import {
-  addCircle,
   addMarker,
   addPolygon,
   addPopup,
   addTileLayer,
   createMap,
 } from '../../../leaflet-adapter/map-utils.js';
+import { circle } from '../../../leaflet-adapter/circle.js';
 import {
   attributionOsm,
   urlTemplateOsm,
@@ -37,7 +37,7 @@ addMarker({
   popupContent: '<b>Hello world!</b><br>I am a popup.',
 });
 
-addCircle({
+circle({
   color: 'red',
   fillColor: '#f03',
   fillOpacity: 0.5,
