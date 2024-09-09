@@ -28,7 +28,7 @@ tileLayer({
 });
 
 function panMap(latitude) {
-  return setView({
+  setView({
     center: [latitude, 0],
     map,
     zoom: 0,
