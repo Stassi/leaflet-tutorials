@@ -7,7 +7,7 @@ export function circle({
   latitudeLongitude,
   map,
   popupContent,
-  radius
+  radius,
 }) {
   const created = leafletCircle(
     latitudeLongitude,
