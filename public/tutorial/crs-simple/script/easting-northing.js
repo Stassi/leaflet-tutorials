@@ -1,5 +1,4 @@
 import {
-  CrsSimple,
   createMap,
   setMapView,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
@@ -9,10 +8,13 @@ import {
 } from '../../../leaflet-adapter/longitude-latitude.js';
 import { marker } from '../../../leaflet-adapter/marker.js';
 import { polyline } from '../../../leaflet-adapter/polyline.js';
+import {
+  simple as crs,
+} from '../../../leaflet-adapter/coordinate-reference-system/simple.js';
 import waypoints from '../data/starmap-waypoints.json' with { type: 'json' };
 
 const map = createMap({
-  crs: CrsSimple,
+  crs,
   id: 'map',
   zoomMin: -3,
 });

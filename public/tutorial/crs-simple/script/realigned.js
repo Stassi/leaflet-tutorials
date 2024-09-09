@@ -1,13 +1,15 @@
 import {
-  CrsSimple,
   createMap,
   setMapView,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { imageOverlay } from '../../../leaflet-adapter/image-overlay.js';
 import { marker } from '../../../leaflet-adapter/marker.js';
+import {
+  simple as crs,
+} from '../../../leaflet-adapter/coordinate-reference-system/simple.js';
 
 const map = createMap({
-  crs: CrsSimple,
+  crs,
   id: 'map',
   zoomMin: -3,
 });
