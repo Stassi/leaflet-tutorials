@@ -1,10 +1,8 @@
-import {
-  getMapZoom,
-} from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { control } from '../../../leaflet-adapter/control/control.js';
 import {
   domElement,
 } from '../../../leaflet-adapter/document-object-model/dom-element.js';
+import { getZoom } from '../../../leaflet-adapter/map/zoom.js';
 import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
 import {
   attributionCarto,
@@ -46,7 +44,7 @@ function addZoomLevelControl(map) {
       }));
 
       map.on('zoom zoomend zoomstart', (_ev) => {
-        setGaugeInnerHtml(`Zoom level: ${getMapZoom(map)}`);
+        setGaugeInnerHtml(`Zoom level: ${getZoom(map)}`);
       });
 
       appendContainerChild(gauge);

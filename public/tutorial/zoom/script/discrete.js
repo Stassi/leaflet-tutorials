@@ -1,7 +1,4 @@
-import {
-  getMapZoom,
-  setMapZoom,
-} from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
+import { getZoom, setZoom } from '../../../leaflet-adapter/map/zoom.js';
 import { control } from '../../../leaflet-adapter/control/control.js';
 import {
   domElement,
@@ -28,7 +25,7 @@ tileLayer({
 });
 
 function zoomMap(zoom) {
-  return setMapZoom({
+  return setZoom({
     map,
     zoom,
   });
@@ -59,7 +56,7 @@ control({
     });
 
     map.on('zoom zoomend zoomstart', (_ev) => {
-      setInnerHtml(`Zoom level: ${getMapZoom(map)}`);
+      setInnerHtml(`Zoom level: ${getZoom(map)}`);
     });
 
     return element;
