@@ -18,9 +18,7 @@ export function marker({
         ? { icon: icon(iconOptions) }
         : {}
     },
-  );
-
-  const prerendered = popupContent
+  ), prerendered = popupContent
     ? created.bindPopup(popupContent)
     : created;
 
