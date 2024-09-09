@@ -1,4 +1,4 @@
-import { tileLayer as leafletTileLayer } from '../leaflet/leaflet-src.esm.js';
+import { tileLayer as leafletTileLayer } from '../../leaflet/leaflet-src.esm.js';
 
 export function tileLayer({
   attribution,

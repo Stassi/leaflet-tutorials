@@ -1,4 +1,4 @@
-import { tileLayer } from '../leaflet/leaflet-src.esm.js';
+import { tileLayer } from '../../leaflet/leaflet-src.esm.js';
 
 const { wms: wmsTileLayer } = tileLayer;
 
