@@ -4,10 +4,7 @@ import {
   map,
 } from '../leaflet/leaflet-src.esm.js';
 
-export {
-  CRS,
-  layerGroup as createLayerGroup,
-} from '../leaflet/leaflet-src.esm.js';
+export { layerGroup as createLayerGroup } from '../leaflet/leaflet-src.esm.js';
 
 const {
   Simple: CrsSimple,
