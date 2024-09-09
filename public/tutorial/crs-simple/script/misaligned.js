@@ -1,24 +1,24 @@
+import { fitBounds } from '../../../leaflet-adapter/map/fit-bounds.js';
+import { imageOverlay } from '../../../leaflet-adapter/image-overlay.js';
+import { map } from '../../../leaflet-adapter/map/map.js';
 import {
-  CrsSimple,
-  addImageOverlay,
-  createMap,
-  fitMapBounds,
-} from '../../../script/map-utils.js';
+  simple as crs,
+} from '../../../leaflet-adapter/coordinate-reference-system/simple.js';
 
 const mapBoundsOptions = {
   bounds: [
     [0, 0],
     [1000, 1000],
   ],
-  map: createMap({
-    crs: CrsSimple,
+  map: map({
+    crs,
     id: 'map',
   }),
 };
 
-addImageOverlay({
+imageOverlay({
   imageUrl: 'image/uqm-starmap.png',
   ...mapBoundsOptions,
 })
 
-fitMapBounds(mapBoundsOptions);
+fitBounds(mapBoundsOptions);

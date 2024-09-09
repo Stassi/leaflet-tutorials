@@ -1,12 +1,12 @@
+import { map } from '../../../leaflet-adapter/map/map.js';
 import {
-  createMap,
-  wmsTileLayer,
-} from '../../../script/map-utils.js';
+  tileLayerWms,
+} from '../../../leaflet-adapter/tile-layer/web-map-service.js';
 
-wmsTileLayer({
+tileLayerWms({
   baseUrl: 'https://ows.mundialis.de/services/service?',
   layers: 'SRTM30-Colored-Hillshade',
-  map: createMap({
+  map: map({
     center: [-17, -67],
     id: 'map',
     zoom: 3,

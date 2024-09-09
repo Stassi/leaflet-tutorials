@@ -1,10 +1,8 @@
-import {
-  createMap,
-  setMapZoom,
-} from '../../../script/map-utils.js';
+import { map as leafletMap } from '../../../leaflet-adapter/map/map.js';
+import { setZoom } from '../../../leaflet-adapter/map/zoom.js';
 import { addCartoTileLayerWithZoomLevelControl } from './zoom.js';
 
-const map = createMap({
+const map = leafletMap({
   center: [0, 0],
   dragging: false,
   id: 'map',
@@ -29,7 +27,7 @@ function zoomCycle() {
   ].forEach((zoom, index) => {
     setTimeout(
       () => {
-        setMapZoom({
+        setZoom({
           map,
           zoom,
         });

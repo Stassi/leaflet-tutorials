@@ -1,18 +1,18 @@
+import { imageOverlay } from '../../../leaflet-adapter/image-overlay.js';
+import { map as leafletMap } from '../../../leaflet-adapter/map/map.js';
+import { marker } from '../../../leaflet-adapter/marker.js';
+import { setView } from '../../../leaflet-adapter/map/set-view.js';
 import {
-  CrsSimple,
-  addImageOverlay,
-  addMarker,
-  createMap,
-  setMapView,
-} from '../../../script/map-utils.js';
+  simple as crs,
+} from '../../../leaflet-adapter/coordinate-reference-system/simple.js';
 
-const map = createMap({
-  crs: CrsSimple,
+const map = leafletMap({
+  crs,
   id: 'map',
   zoomMin: -3,
 });
 
-addImageOverlay({
+imageOverlay({
   bounds: [
     [-26.5, -25],
     [1021.5, 1023],
@@ -21,12 +21,12 @@ addImageOverlay({
   map,
 });
 
-addMarker({
+marker({
   latitudeLongitude: [145, 175.2],
   map,
 });
 
-setMapView({
+setView({
   center: [70, 120],
   map,
   zoom: 1,

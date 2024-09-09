@@ -1,15 +1,13 @@
-import {
-  addScaleControl,
-  addTileLayer,
-  createMap,
-  setMapView,
-} from '../../../script/map-utils.js';
+import { map as leafletMap } from '../../../leaflet-adapter/map/map.js';
+import { scale } from '../../../leaflet-adapter/control/scale.js';
+import { setView } from '../../../leaflet-adapter/map/set-view.js';
+import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
 import {
   attributionCarto,
   urlTemplateCarto,
 } from '../../../script/base-layers.js';
 
-const map = createMap({
+const map = leafletMap({
   center: [0, 0],
   dragging: false,
   id: 'map',
@@ -18,19 +16,19 @@ const map = createMap({
   zoomMin: 1,
 });
 
-addScaleControl({
+scale({
   map,
   maxWidth: 150,
 });
 
-addTileLayer({
+tileLayer({
   attribution: attributionCarto,
   map,
   urlTemplate: urlTemplateCarto,
 });
 
 function panMap(latitude) {
-  return setMapView({
+  setView({
     center: [latitude, 0],
     map,
     zoom: 0,

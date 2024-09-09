@@ -1,10 +1,8 @@
-import {
-  addLayersControl,
-  createLayerGroup,
-  createMap,
-  createMarker,
-  createTileLayer,
-} from '../../../script/map-utils.js';
+import { layerGroup } from '../../../leaflet-adapter/layer-group.js';
+import { layers } from '../../../leaflet-adapter/control/layers.js';
+import { map } from '../../../leaflet-adapter/map/map.js';
+import { marker } from '../../../leaflet-adapter/marker.js';
+import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
 import {
   attributionHot,
   attributionOsm,
@@ -37,15 +35,13 @@ const baseLayers = Object.fromEntries(
     urlTemplate,
   }) => [
     name,
-    createTileLayer({
+    tileLayer({
       attribution,
       maxZoom: 19,
       urlTemplate,
     }),
   ])
-);
-
-const overlays = Object.fromEntries(
+), overlays = Object.fromEntries(
   [
     {
       data: [
@@ -89,11 +85,11 @@ const overlays = Object.fromEntries(
     popupContentTemplate,
   }) => [
     overlayName,
-    createLayerGroup(
+    layerGroup(
       data.map(({
         latitudeLongitude,
         name: placeName,
-      }) => createMarker({
+      }) => marker({
         latitudeLongitude,
         popupContent: popupContentTemplate(placeName),
       }))
@@ -101,9 +97,9 @@ const overlays = Object.fromEntries(
   ])
 );
 
-addLayersControl({
+layers({
   baseLayers,
-  map: createMap({
+  map: map({
     activeLayers: [
       baseLayers.OpenStreetMap,
       overlays.Cities,

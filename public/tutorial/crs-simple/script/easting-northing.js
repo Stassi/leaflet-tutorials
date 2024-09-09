@@ -1,21 +1,23 @@
+import { imageOverlay } from '../../../leaflet-adapter/image-overlay.js';
 import {
-  CrsSimple,
-  addImageOverlay,
-  addMarker,
-  addPolyline,
-  createMap,
   longitudeLatitude as xy,
-  setMapView,
-} from '../../../script/map-utils.js';
+} from '../../../leaflet-adapter/longitude-latitude.js';
+import { map as leafletMap } from '../../../leaflet-adapter/map/map.js';
+import { marker } from '../../../leaflet-adapter/marker.js';
+import { polyline } from '../../../leaflet-adapter/polyline.js';
+import { setView } from '../../../leaflet-adapter/map/set-view.js';
+import {
+  simple as crs,
+} from '../../../leaflet-adapter/coordinate-reference-system/simple.js';
 import waypoints from '../data/starmap-waypoints.json' with { type: 'json' };
 
-const map = createMap({
-  crs: CrsSimple,
+const map = leafletMap({
+  crs,
   id: 'map',
   zoomMin: -3,
 });
 
-addImageOverlay({
+imageOverlay({
   bounds: [
     [-25, -26.5],
     [1023, 1021.5],
@@ -24,7 +26,7 @@ addImageOverlay({
   map,
 });
 
-setMapView({
+setView({
   center: xy([120, 70]),
   map,
   zoom: 1,
@@ -34,14 +36,14 @@ waypoints.forEach(({
   longitudeLatitude,
   name,
 }) => {
-  addMarker({
+  marker({
     latitudeLongitude: xy(longitudeLatitude),
     map,
     popupContent: name,
   });
 });
 
-addPolyline({
+polyline({
   latitudeLongitudes: waypoints
     .filter(
       ({ name }) => ['Deneb', 'Sol'].includes(name)

@@ -1,10 +1,12 @@
 import {
-  DomUtil,
-  addControl,
-  addGeoJson,
-  addTileLayer,
-  createMap,
-} from '../../../script/map-utils.js';
+  DomUtility,
+} from '../../../leaflet-adapter/document-object-model/dom-utility.js';
+import { control } from '../../../leaflet-adapter/control/control.js';
+import {
+  geoJson as leafletGeoJson,
+} from '../../../leaflet-adapter/geo-json.js';
+import { map as leafletMap } from '../../../leaflet-adapter/map/map.js';
+import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
 import {
   attributionOsm,
   urlTemplateOsm,
@@ -12,7 +14,7 @@ import {
 import data
   from '../data/us-state-population-density.json' with { type: 'json' };
 
-const map = createMap({
+const map = leafletMap({
   center: [37.8, -96],
   id: 'map',
   zoom: 4
@@ -27,7 +29,7 @@ const map = createMap({
   1000,
 ];
 
-addTileLayer({
+tileLayer({
   attribution: attributionOsm,
   map,
   urlTemplate: urlTemplateOsm,
@@ -45,10 +47,10 @@ function getColor(density) {
                 '#FFEDA0';
 }
 
-addControl({
+control({
   map,
   onAdd(_map) {
-    const div = DomUtil.create(
+    const div = DomUtility.create(
       'div',
       'info legend',
     );
@@ -68,10 +70,10 @@ addControl({
   position: 'bottomright',
 });
 
-const info = addControl({
+const info = control({
   map,
   onAdd(_map) {
-    this._div = DomUtil.create(
+    this._div = DomUtility.create(
       'div',
       'info',
     );
@@ -90,7 +92,7 @@ const info = addControl({
         : 'Hover over a state'
     }`;
   },
-}), geoJson = addGeoJson({
+}), geoJson = leafletGeoJson({
   data,
   map,
   onEachFeature(_feature, layer) {

@@ -1,43 +1,41 @@
-import {
-  addCircle,
-  addMarker,
-  addPolygon,
-  addPopup,
-  addTileLayer,
-  createMap,
-} from '../../../script/map-utils.js';
+import { circle } from '../../../leaflet-adapter/circle.js';
+import { map as leafletMap } from '../../../leaflet-adapter/map/map.js';
+import { marker } from '../../../leaflet-adapter/marker.js';
+import { polygon } from '../../../leaflet-adapter/polygon.js';
+import { popup } from '../../../leaflet-adapter/popup.js';
+import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
 import {
   attributionOsm,
   urlTemplateOsm,
 } from '../../../script/base-layers.js';
 
-const map = createMap({
+const map = leafletMap({
   center: [51.505, -0.09],
   id: 'map',
   onClick: ({ latlng: latitudeLongitude }) => {
-    addPopup({
+    popup({
       htmlContent: `You clicked the map at ${latitudeLongitude}`,
       latitudeLongitude,
-      map
+      map,
     });
   },
   zoom: 13,
 });
 
-addTileLayer({
+tileLayer({
   attribution: attributionOsm,
   map,
   urlTemplate: urlTemplateOsm,
   zoomMax: 19,
 });
 
-addMarker({
+marker({
   latitudeLongitude: [51.5, -0.09],
   map,
   popupContent: '<b>Hello world!</b><br>I am a popup.',
 });
 
-addCircle({
+circle({
   color: 'red',
   fillColor: '#f03',
   fillOpacity: 0.5,
@@ -47,7 +45,7 @@ addCircle({
   radius: 500,
 });
 
-addPolygon({
+polygon({
   latitudeLongitudes: [
     [51.509, -0.08],
     [51.503, -0.06],
@@ -57,7 +55,7 @@ addPolygon({
   popupContent: 'I am a polygon.'
 });
 
-addPopup({
+popup({
   htmlContent: 'I am a standalone popup.',
   latitudeLongitude: [51.513, -0.09],
   map,

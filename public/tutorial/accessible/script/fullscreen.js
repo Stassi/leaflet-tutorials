@@ -1,8 +1,6 @@
-import {
-  addMarker,
-  addTileLayer,
-} from '../../../script/map-utils.js';
 import { createFullscreenMap } from '../../../script/leaflet-fullscreen.js';
+import { marker } from '../../../leaflet-adapter/marker.js';
+import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
 import {
   attributionOsm,
   urlTemplateOsm,
@@ -15,14 +13,14 @@ const altText = 'Kyiv',
     zoom: 4,
   });
 
-addMarker({
+marker({
   altText,
   latitudeLongitude: [50.4501, 30.5234],
   map,
   popupContent: `${altText}, Ukraine is the birthplace of Leaflet!`,
 });
 
-addTileLayer({
+tileLayer({
   attribution: attributionOsm,
   map,
   urlTemplate: urlTemplateOsm,

@@ -1,13 +1,16 @@
+import { control } from '../../../leaflet-adapter/control/control.js';
 import {
-  addControl,
-  addTileLayer,
-  createDomElement,
-  getMapZoom
-} from '../../../script/map-utils.js';
-import { attributionCarto, urlTemplateCarto } from '../../../script/base-layers.js';
+  domElement,
+} from '../../../leaflet-adapter/document-object-model/dom-element.js';
+import { getZoom } from '../../../leaflet-adapter/map/zoom.js';
+import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
+import {
+  attributionCarto,
+  urlTemplateCarto,
+} from '../../../script/base-layers.js';
 
 function addCartoTileLayer(map) {
-  addTileLayer({
+  tileLayer({
     attribution: attributionCarto,
     map,
     urlTemplate: urlTemplateCarto,
@@ -15,7 +18,7 @@ function addCartoTileLayer(map) {
 }
 
 function addZoomLevelControl(map) {
-  addControl({
+  control({
     map,
     onAdd() {
       const [
@@ -35,13 +38,13 @@ function addZoomLevelControl(map) {
           textAlign: 'left',
           width: '200px',
         },
-      ].map((style) => createDomElement({
+      ].map((style) => domElement({
         name: 'div',
         style,
       }));
 
       map.on('zoom zoomend zoomstart', (_ev) => {
-        setGaugeInnerHtml(`Zoom level: ${getMapZoom(map)}`);
+        setGaugeInnerHtml(`Zoom level: ${getZoom(map)}`);
       });
 
       appendContainerChild(gauge);

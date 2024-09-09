@@ -1,8 +1,8 @@
-import { createMap } from '../../../script/map-utils.js';
+import { map } from '../../../leaflet-adapter/map/map.js';
 import { addCartoTileLayerWithZoomLevelControl } from './zoom.js';
 
 addCartoTileLayerWithZoomLevelControl(
-  createMap({
+  map({
     center: [0, 0],
     id: 'map',
     zoom: 0,

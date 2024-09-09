@@ -1,16 +1,16 @@
+import { layers } from '../../../leaflet-adapter/control/layers.js';
+import { map as leafletMap } from '../../../leaflet-adapter/map/map.js';
 import {
-  addLayersControl,
-  createMap,
-  wmsTileLayer,
-} from '../../../script/map-utils.js';
+  tileLayerWms,
+} from '../../../leaflet-adapter/tile-layer/web-map-service.js';
 
-const map = createMap({
+const map = leafletMap({
   center: [-17, -67],
   id: 'map',
   zoom: 3,
 });
 
-addLayersControl({
+layers({
   baseLayers: Object.fromEntries(
     [
       {
@@ -39,7 +39,7 @@ addLayersControl({
       visible,
     }) => [
       name,
-      wmsTileLayer({
+      tileLayerWms({
         baseUrl: 'https://ows.mundialis.de/services/service?',
         layers,
         map: visible

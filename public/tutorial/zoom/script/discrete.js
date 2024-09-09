@@ -1,17 +1,16 @@
+import { getZoom, setZoom } from '../../../leaflet-adapter/map/zoom.js';
+import { control } from '../../../leaflet-adapter/control/control.js';
 import {
-  addControl,
-  addTileLayer,
-  createDomElement,
-  createMap,
-  getMapZoom,
-  setMapZoom,
-} from '../../../script/map-utils.js';
+  domElement,
+} from '../../../leaflet-adapter/document-object-model/dom-element.js';
+import { map as leafletMap } from '../../../leaflet-adapter/map/map.js';
+import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
 import {
   attributionCarto,
   urlTemplateCarto,
 } from '../../../script/base-layers.js';
 
-const map = createMap({
+const map = leafletMap({
   center: [0, 0],
   id: 'map',
   zoom: 0,
@@ -19,14 +18,14 @@ const map = createMap({
   zoomMin: 0,
 });
 
-addTileLayer({
+tileLayer({
   attribution: attributionCarto,
   map,
   urlTemplate: urlTemplateCarto,
 });
 
 function zoomMap(zoom) {
-  return setMapZoom({
+  setZoom({
     map,
     zoom,
   });
@@ -40,13 +39,13 @@ setInterval(() => {
   }, 2000);
 }, 4000);
 
-addControl({
+control({
   map,
   onAdd() {
     const {
       element,
       setInnerHtml,
-    } = createDomElement({
+    } = domElement({
       name: 'div',
       style: {
         background: 'rgba(255,255,255,0.5)',
@@ -57,7 +56,7 @@ addControl({
     });
 
     map.on('zoom zoomend zoomstart', (_ev) => {
-      setInnerHtml(`Zoom level: ${getMapZoom(map)}`);
+      setInnerHtml(`Zoom level: ${getZoom(map)}`);
     });
 
     return element;

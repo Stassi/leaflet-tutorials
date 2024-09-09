@@ -1,29 +1,29 @@
+import { circleMarker } from '../../../leaflet-adapter/circle-marker.js';
 import {
-  addGeoJson,
-  addTileLayer,
-  createCircleMarker,
-  createMap,
-} from '../../../script/map-utils.js';
+  geoJson as leafletGeoJson,
+} from '../../../leaflet-adapter/geo-json.js';
+import { map as leafletMap } from '../../../leaflet-adapter/map/map.js';
+import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
 import {
   attributionOsm,
   urlTemplateOsm,
 } from '../../../script/base-layers.js';
 import data from '../data/baseball-factions.json' with { type: 'json' };
 
-const map = createMap({
+const map = leafletMap({
   center: [39.74739, -105],
   id: 'map',
-  zoom: 13
+  zoom: 13,
 });
 
-addTileLayer({
+tileLayer({
   attribution: attributionOsm,
   map,
   urlTemplate: urlTemplateOsm,
   zoomMax: 19,
 });
 
-addGeoJson({
+leafletGeoJson({
   data,
   filter({
     properties: { underConstruction } = {},
@@ -43,7 +43,7 @@ addGeoJson({
     if (popupContent && !underConstruction) layer.bindPopup(popupContent);
   },
   pointToLayer(_feature, latitudeLongitude) {
-    return createCircleMarker({
+    return circleMarker({
       color: '#000',
       fillColor: '#ff7800',
       fillOpacity: 0.8,

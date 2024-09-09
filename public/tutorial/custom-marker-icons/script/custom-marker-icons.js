@@ -1,20 +1,18 @@
-import {
-  addMarker,
-  addTileLayer,
-  createMap,
-} from '../../../script/map-utils.js';
+import { map as leafletMap } from '../../../leaflet-adapter/map/map.js';
+import { marker } from '../../../leaflet-adapter/marker.js';
+import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
 import {
   attributionOsm,
   urlTemplateOsm,
 } from '../../../script/base-layers.js';
 
-const map = createMap({
+const map = leafletMap({
   center: [51.5, -0.09],
   id: 'map',
   zoom: 13,
 });
 
-addTileLayer({
+tileLayer({
   attribution: attributionOsm,
   map,
   urlTemplate: urlTemplateOsm,
@@ -41,7 +39,7 @@ addTileLayer({
   latitudeLongitude,
   popupContent,
 }) => {
-  addMarker({
+  marker({
     iconOptions: {
       iconAnchor: [22, 94],
       iconSize: [38, 95],
