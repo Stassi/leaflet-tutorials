@@ -1,8 +1,10 @@
 import {
-  createDomElement,
   getMapZoom,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { control } from '../../../leaflet-adapter/control/control.js';
+import {
+  domElement,
+} from '../../../leaflet-adapter/document-object-model/dom-element.js';
 import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
 import {
   attributionCarto,
@@ -38,7 +40,7 @@ function addZoomLevelControl(map) {
           textAlign: 'left',
           width: '200px',
         },
-      ].map((style) => createDomElement({
+      ].map((style) => domElement({
         name: 'div',
         style,
       }));

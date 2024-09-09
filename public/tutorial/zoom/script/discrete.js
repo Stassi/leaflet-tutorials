@@ -1,10 +1,12 @@
 import {
-  createDomElement,
   createMap,
   getMapZoom,
   setMapZoom,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { control } from '../../../leaflet-adapter/control/control.js';
+import {
+  domElement,
+} from '../../../leaflet-adapter/document-object-model/dom-element.js';
 import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
 import {
   attributionCarto,
@@ -46,7 +48,7 @@ control({
     const {
       element,
       setInnerHtml,
-    } = createDomElement({
+    } = domElement({
       name: 'div',
       style: {
         background: 'rgba(255,255,255,0.5)',
