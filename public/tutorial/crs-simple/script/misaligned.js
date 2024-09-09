@@ -1,6 +1,4 @@
-import {
-  fitMapBounds,
-} from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
+import { fitBounds } from '../../../leaflet-adapter/map/fit-bounds.js';
 import { imageOverlay } from '../../../leaflet-adapter/image-overlay.js';
 import { map } from '../../../leaflet-adapter/map/map.js';
 import {
@@ -23,4 +21,4 @@ imageOverlay({
   ...mapBoundsOptions,
 })
 
-fitMapBounds(mapBoundsOptions);
+fitBounds(mapBoundsOptions);
