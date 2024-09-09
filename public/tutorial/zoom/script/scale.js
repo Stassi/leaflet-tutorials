@@ -3,7 +3,7 @@ import {
   setMapView,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { scale } from '../../../leaflet-adapter/control/scale.js';
-import { tileLayer } from '../../../leaflet-adapter/tile-layer.js';
+import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
 import {
   attributionCarto,
   urlTemplateCarto,

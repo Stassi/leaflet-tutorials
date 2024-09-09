@@ -3,7 +3,7 @@ import {
   getMapZoom,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { control } from '../../../leaflet-adapter/control/control.js';
-import { tileLayer } from '../../../leaflet-adapter/tile-layer.js';
+import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
 import {
   attributionCarto,
   urlTemplateCarto,

@@ -6,7 +6,7 @@ import { control } from '../../../leaflet-adapter/control/control.js';
 import {
   geoJson as leafletGeoJson,
 } from '../../../leaflet-adapter/geo-json.js';
-import { tileLayer } from '../../../leaflet-adapter/tile-layer.js';
+import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
 import {
   attributionOsm,
   urlTemplateOsm,

@@ -2,7 +2,7 @@ import {
   createMap,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { layers } from '../../../leaflet-adapter/control/layers.js';
-import { tileLayerWms } from '../../../leaflet-adapter/tile-layer-wms.js';
+import { tileLayerWms } from '../../../leaflet-adapter/tile-layer/web-map-service.js';
 
 const map = createMap({
   center: [-17, -67],

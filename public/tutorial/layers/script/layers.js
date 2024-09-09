@@ -4,7 +4,7 @@ import {
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { layers } from '../../../leaflet-adapter/control/layers.js';
 import { marker } from '../../../leaflet-adapter/marker.js';
-import { tileLayer } from '../../../leaflet-adapter/tile-layer.js';
+import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
 import {
   attributionHot,
   attributionOsm,

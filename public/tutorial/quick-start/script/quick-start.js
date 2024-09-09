@@ -5,7 +5,7 @@ import { circle } from '../../../leaflet-adapter/circle.js';
 import { marker } from '../../../leaflet-adapter/marker.js';
 import { polygon } from '../../../leaflet-adapter/polygon.js';
 import { popup } from '../../../leaflet-adapter/popup.js';
-import { tileLayer } from '../../../leaflet-adapter/tile-layer.js';
+import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
 import {
   attributionOsm,
   urlTemplateOsm,
