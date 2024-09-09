@@ -1,7 +1,7 @@
 import {
-  createLayerGroup,
   createMap,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
+import { layerGroup } from '../../../leaflet-adapter/layer-group.js';
 import { layers } from '../../../leaflet-adapter/control/layers.js';
 import { marker } from '../../../leaflet-adapter/marker.js';
 import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
@@ -87,7 +87,7 @@ const baseLayers = Object.fromEntries(
     popupContentTemplate,
   }) => [
     overlayName,
-    createLayerGroup(
+    layerGroup(
       data.map(({
         latitudeLongitude,
         name: placeName,
