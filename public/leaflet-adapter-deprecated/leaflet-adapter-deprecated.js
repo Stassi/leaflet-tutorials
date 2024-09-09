@@ -1,7 +1,6 @@
 import {
   CRS,
   DomUtil,
-  icon,
   latLng as latitudeLongitude,
   map,
   popup,
