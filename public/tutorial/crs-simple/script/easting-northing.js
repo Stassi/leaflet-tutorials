@@ -1,6 +1,3 @@
-import {
-  setMapView,
-} from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { imageOverlay } from '../../../leaflet-adapter/image-overlay.js';
 import {
   longitudeLatitude as xy,
@@ -8,6 +5,7 @@ import {
 import { map as leafletMap } from '../../../leaflet-adapter/map/map.js';
 import { marker } from '../../../leaflet-adapter/marker.js';
 import { polyline } from '../../../leaflet-adapter/polyline.js';
+import { setView } from '../../../leaflet-adapter/map/set-view.js';
 import {
   simple as crs,
 } from '../../../leaflet-adapter/coordinate-reference-system/simple.js';
@@ -28,7 +26,7 @@ imageOverlay({
   map,
 });
 
-setMapView({
+setView({
   center: xy([120, 70]),
   map,
   zoom: 1,

@@ -1,8 +1,6 @@
-import {
-  setMapView,
-} from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { map as leafletMap } from '../../../leaflet-adapter/map/map.js';
 import { scale } from '../../../leaflet-adapter/control/scale.js';
+import { setView } from '../../../leaflet-adapter/map/set-view.js';
 import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
 import {
   attributionCarto,
@@ -30,7 +28,7 @@ tileLayer({
 });
 
 function panMap(latitude) {
-  return setMapView({
+  return setView({
     center: [latitude, 0],
     map,
     zoom: 0,
