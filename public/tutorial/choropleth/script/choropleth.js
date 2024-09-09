@@ -1,7 +1,9 @@
 import {
   createMap,
-  DomUtil,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
+import {
+  DomUtility,
+} from '../../../leaflet-adapter/document-object-model/dom-utility.js';
 import { control } from '../../../leaflet-adapter/control/control.js';
 import {
   geoJson as leafletGeoJson,
@@ -50,7 +52,7 @@ function getColor(density) {
 control({
   map,
   onAdd(_map) {
-    const div = DomUtil.create(
+    const div = DomUtility.create(
       'div',
       'info legend',
     );
@@ -73,7 +75,7 @@ control({
 const info = control({
   map,
   onAdd(_map) {
-    this._div = DomUtil.create(
+    this._div = DomUtility.create(
       'div',
       'info',
     );
