@@ -3,7 +3,6 @@ import {
   DomUtil,
   latLng as latitudeLongitude,
   map,
-  tileLayer,
 } from '../leaflet/leaflet-src.esm.js';
 
 export {
@@ -11,8 +10,6 @@ export {
   DomUtil,
   layerGroup as createLayerGroup,
 } from '../leaflet/leaflet-src.esm.js';
-
-const { wms: leafletWmsTileLayer } = tileLayer;
 
 const {
   Simple: CrsSimple,
@@ -137,19 +134,4 @@ export function setMapZoom({
     zoom,
     zoomPanOptions,
   );
-}
-
-export function wmsTileLayer({
-  baseUrl,
-  layers,
-  map,
-}) {
-  const created = leafletWmsTileLayer(
-    baseUrl,
-    { layers },
-  );
-
-  return map
-    ? created.addTo(map)
-    : created;
 }
