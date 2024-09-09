@@ -1,10 +1,12 @@
 import {
   CrsSimple,
   createMap,
-  longitudeLatitude as xy,
   setMapView,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { imageOverlay } from '../../../leaflet-adapter/image-overlay.js';
+import {
+  longitudeLatitude as xy,
+} from '../../../leaflet-adapter/longitude-latitude.js';
 import { marker } from '../../../leaflet-adapter/marker.js';
 import { polyline } from '../../../leaflet-adapter/polyline.js';
 import waypoints from '../data/starmap-waypoints.json' with { type: 'json' };
