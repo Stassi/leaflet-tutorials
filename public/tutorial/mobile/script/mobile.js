@@ -1,15 +1,13 @@
-import {
-  createWorldLocatorMap,
-} from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { circle } from '../../../leaflet-adapter/circle.js';
 import { marker } from '../../../leaflet-adapter/marker.js';
 import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
+import { worldLocator } from '../../../leaflet-adapter/map/world-locator.js';
 import {
   attributionOsm,
   urlTemplateOsm,
 } from '../../../script/base-layers.js';
 
-const map = createWorldLocatorMap({
+const map = worldLocator({
   id: 'map',
   setViewOnLocate: true,
   zoomMaxOnLocate: 16,
