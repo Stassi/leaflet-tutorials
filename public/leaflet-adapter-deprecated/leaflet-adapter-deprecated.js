@@ -24,25 +24,6 @@ export {
   CrsSimple,
 };
 
-export function createTileLayer({
-  attribution,
-  urlTemplate,
-  zoomMax: maxZoom = 18,
-}) {
-  return tileLayer(
-    urlTemplate,
-    {
-      attribution,
-      maxZoom,
-    },
-  );
-}
-
-export function addTileLayer({ map, ...props }) {
-  return createTileLayer({ ...props })
-    .addTo(map);
-}
-
 export function createDomElement({ name, style }) {
   const element = DomUtil.create(name);
 
