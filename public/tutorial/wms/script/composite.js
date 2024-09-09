@@ -1,8 +1,8 @@
 import {
   createMap,
-  wmsTileLayer,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { layers } from '../../../leaflet-adapter/control/layers.js';
+import { tileLayerWms } from '../../../leaflet-adapter/tile-layer-wms.js';
 
 const map = createMap({
   center: [-17, -67],
@@ -39,7 +39,7 @@ layers({
       visible,
     }) => [
       name,
-      wmsTileLayer({
+      tileLayerWms({
         baseUrl: 'https://ows.mundialis.de/services/service?',
         layers,
         map: visible

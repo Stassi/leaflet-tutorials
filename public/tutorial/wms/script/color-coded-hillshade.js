@@ -1,9 +1,9 @@
 import {
   createMap,
-  wmsTileLayer,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
+import { tileLayerWms } from '../../../leaflet-adapter/tile-layer-wms.js';
 
-wmsTileLayer({
+tileLayerWms({
   baseUrl: 'https://ows.mundialis.de/services/service?',
   layers: 'SRTM30-Colored-Hillshade',
   map: createMap({

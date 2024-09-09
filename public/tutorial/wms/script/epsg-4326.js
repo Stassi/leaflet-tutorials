@@ -1,10 +1,10 @@
 import {
   CrsEpsg4326,
   createMap,
-  wmsTileLayer,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
+import { tileLayerWms } from "../../../leaflet-adapter/tile-layer-wms.js";
 
-wmsTileLayer({
+tileLayerWms({
   baseUrl: 'https://ows.mundialis.de/services/service?',
   layers: 'TOPO-OSM-WMS',
   map: createMap({
