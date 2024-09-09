@@ -1,8 +1,8 @@
 import {
-  addMarker,
   addTileLayer,
   createMap,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
+import { marker } from '../../../leaflet-adapter/marker.js';
 import {
   attributionOsm,
   urlTemplateOsm,
@@ -41,7 +41,7 @@ addTileLayer({
   latitudeLongitude,
   popupContent,
 }) => {
-  addMarker({
+  marker({
     iconOptions: {
       iconAnchor: [22, 94],
       iconSize: [38, 95],

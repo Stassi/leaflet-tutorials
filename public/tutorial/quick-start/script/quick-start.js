@@ -1,10 +1,10 @@
 import {
-  addMarker,
   addPopup,
   addTileLayer,
   createMap,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { circle } from '../../../leaflet-adapter/circle.js';
+import { marker } from '../../../leaflet-adapter/marker.js';
 import { polygon } from '../../../leaflet-adapter/polygon.js';
 import {
   attributionOsm,
@@ -31,7 +31,7 @@ addTileLayer({
   zoomMax: 19,
 });
 
-addMarker({
+marker({
   latitudeLongitude: [51.5, -0.09],
   map,
   popupContent: '<b>Hello world!</b><br>I am a popup.',

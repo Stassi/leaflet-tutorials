@@ -1,10 +1,10 @@
 import {
   CrsSimple,
-  addMarker,
   createMap,
   setMapView,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { imageOverlay } from '../../../leaflet-adapter/image-overlay.js';
+import { marker } from '../../../leaflet-adapter/marker.js';
 
 const map = createMap({
   crs: CrsSimple,
@@ -21,7 +21,7 @@ imageOverlay({
   map,
 });
 
-addMarker({
+marker({
   latitudeLongitude: [145, 175.2],
   map,
 });

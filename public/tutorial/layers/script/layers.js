@@ -1,10 +1,10 @@
 import {
   createLayerGroup,
   createMap,
-  createMarker,
   createTileLayer,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { layers } from '../../../leaflet-adapter/control/layers.js';
+import { marker } from '../../../leaflet-adapter/marker.js';
 import {
   attributionHot,
   attributionOsm,
@@ -91,7 +91,7 @@ const baseLayers = Object.fromEntries(
       data.map(({
         latitudeLongitude,
         name: placeName,
-      }) => createMarker({
+      }) => marker({
         latitudeLongitude,
         popupContent: popupContentTemplate(placeName),
       }))

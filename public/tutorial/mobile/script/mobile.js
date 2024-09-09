@@ -1,9 +1,9 @@
 import {
-  addMarker,
   addTileLayer,
   createWorldLocatorMap,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { circle } from '../../../leaflet-adapter/circle.js';
+import { marker } from '../../../leaflet-adapter/marker.js';
 import {
   attributionOsm,
   urlTemplateOsm,
@@ -23,7 +23,7 @@ const map = createWorldLocatorMap({
       radius,
     });
 
-    addMarker({
+    marker({
       latitudeLongitude,
       map,
       popupContent: `You are within ${radius} meters from this point.`

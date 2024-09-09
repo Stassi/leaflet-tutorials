@@ -1,8 +1,8 @@
 import {
-  addMarker,
   addTileLayer,
   createMap,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
+import { marker } from '../../../leaflet-adapter/marker.js';
 import {
   attributionOsm,
   urlTemplateOsm,
@@ -14,7 +14,7 @@ const map = createMap({
   zoom: 4,
 });
 
-addMarker({
+marker({
   latitudeLongitude: [50.4501, 30.5234],
   map,
 });

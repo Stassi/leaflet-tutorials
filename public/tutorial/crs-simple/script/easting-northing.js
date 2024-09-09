@@ -1,11 +1,11 @@
 import {
   CrsSimple,
-  addMarker,
   createMap,
   longitudeLatitude as xy,
   setMapView,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { imageOverlay } from '../../../leaflet-adapter/image-overlay.js';
+import { marker } from '../../../leaflet-adapter/marker.js';
 import { polyline } from '../../../leaflet-adapter/polyline.js';
 import waypoints from '../data/starmap-waypoints.json' with { type: 'json' };
 
@@ -34,7 +34,7 @@ waypoints.forEach(({
   longitudeLatitude,
   name,
 }) => {
-  addMarker({
+  marker({
     latitudeLongitude: xy(longitudeLatitude),
     map,
     popupContent: name,
