@@ -1,11 +1,11 @@
 import {
-  addPopup,
   addTileLayer,
   createMap,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { circle } from '../../../leaflet-adapter/circle.js';
 import { marker } from '../../../leaflet-adapter/marker.js';
 import { polygon } from '../../../leaflet-adapter/polygon.js';
+import { popup } from '../../../leaflet-adapter/popup.js';
 import {
   attributionOsm,
   urlTemplateOsm,
@@ -15,10 +15,10 @@ const map = createMap({
   center: [51.505, -0.09],
   id: 'map',
   onClick: ({ latlng: latitudeLongitude }) => {
-    addPopup({
+    popup({
       htmlContent: `You clicked the map at ${latitudeLongitude}`,
       latitudeLongitude,
-      map
+      map,
     });
   },
   zoom: 13,
@@ -57,7 +57,7 @@ polygon({
   popupContent: 'I am a polygon.'
 });
 
-addPopup({
+popup({
   htmlContent: 'I am a standalone popup.',
   latitudeLongitude: [51.513, -0.09],
   map,
