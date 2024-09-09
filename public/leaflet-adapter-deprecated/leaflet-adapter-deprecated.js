@@ -3,7 +3,6 @@ import {
   DomUtil,
   latLng as latitudeLongitude,
   map,
-  popup,
   tileLayer,
 } from '../leaflet/leaflet-src.esm.js';
 
@@ -24,17 +23,6 @@ export {
   CrsEpsg4326,
   CrsSimple,
 };
-
-export function addPopup({
-  htmlContent,
-  latitudeLongitude,
-  map
-}) {
-  return popup()
-    .setLatLng(latitudeLongitude)
-    .setContent(htmlContent)
-    .openOn(map);
-}
 
 export function createTileLayer({
   attribution,
