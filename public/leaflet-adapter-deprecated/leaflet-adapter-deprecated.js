@@ -45,7 +45,7 @@ export function createWorldLocatorMap({
   onLocate,
   onLocateError,
   setViewOnLocate: setView,
-  zoomMaxOnLocate: maxZoom
+  zoomMaxOnLocate: maxZoom,
 }) {
   return map(id)
     .fitWorld()
