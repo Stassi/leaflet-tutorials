@@ -3,12 +3,9 @@ import { CRS, map } from '../leaflet/leaflet-src.esm.js';
 const {
   Simple: CrsSimple,
   EPSG3857: CrsEpsg3857,
-  EPSG4326: CrsEpsg4326,
 } = CRS;
-export {
-  CrsEpsg4326,
-  CrsSimple,
-};
+
+export { CrsSimple };
 
 export function createMap({
   activeLayers: layers,
