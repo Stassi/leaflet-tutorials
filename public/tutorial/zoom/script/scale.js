@@ -1,9 +1,9 @@
 import {
-  addTileLayer,
   createMap,
   setMapView,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { scale } from '../../../leaflet-adapter/control/scale.js';
+import { tileLayer } from '../../../leaflet-adapter/tile-layer.js';
 import {
   attributionCarto,
   urlTemplateCarto,
@@ -23,7 +23,7 @@ scale({
   maxWidth: 150,
 });
 
-addTileLayer({
+tileLayer({
   attribution: attributionCarto,
   map,
   urlTemplate: urlTemplateCarto,

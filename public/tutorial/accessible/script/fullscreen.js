@@ -1,8 +1,6 @@
-import {
-  addTileLayer,
-} from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { createFullscreenMap } from '../../../script/leaflet-fullscreen.js';
 import { marker } from '../../../leaflet-adapter/marker.js';
+import { tileLayer } from '../../../leaflet-adapter/tile-layer.js';
 import {
   attributionOsm,
   urlTemplateOsm,
@@ -22,7 +20,7 @@ marker({
   popupContent: `${altText}, Ukraine is the birthplace of Leaflet!`,
 });
 
-addTileLayer({
+tileLayer({
   attribution: attributionOsm,
   map,
   urlTemplate: urlTemplateOsm,

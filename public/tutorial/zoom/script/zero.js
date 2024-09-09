@@ -1,13 +1,13 @@
 import {
-  addTileLayer,
   createMap,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
+import { tileLayer } from '../../../leaflet-adapter/tile-layer.js';
 import {
   attributionCarto,
   urlTemplateCarto,
 } from '../../../script/base-layers.js';
 
-addTileLayer({
+tileLayer({
   attribution: attributionCarto,
   map: createMap({
     center: [0, 0],

@@ -1,10 +1,10 @@
 import {
   createLayerGroup,
   createMap,
-  createTileLayer,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { layers } from '../../../leaflet-adapter/control/layers.js';
 import { marker } from '../../../leaflet-adapter/marker.js';
+import { tileLayer } from '../../../leaflet-adapter/tile-layer.js';
 import {
   attributionHot,
   attributionOsm,
@@ -37,7 +37,7 @@ const baseLayers = Object.fromEntries(
     urlTemplate,
   }) => [
     name,
-    createTileLayer({
+    tileLayer({
       attribution,
       maxZoom: 19,
       urlTemplate,

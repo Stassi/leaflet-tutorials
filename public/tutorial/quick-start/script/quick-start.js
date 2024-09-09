@@ -1,11 +1,11 @@
 import {
-  addTileLayer,
   createMap,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { circle } from '../../../leaflet-adapter/circle.js';
 import { marker } from '../../../leaflet-adapter/marker.js';
 import { polygon } from '../../../leaflet-adapter/polygon.js';
 import { popup } from '../../../leaflet-adapter/popup.js';
+import { tileLayer } from '../../../leaflet-adapter/tile-layer.js';
 import {
   attributionOsm,
   urlTemplateOsm,
@@ -24,7 +24,7 @@ const map = createMap({
   zoom: 13,
 });
 
-addTileLayer({
+tileLayer({
   attribution: attributionOsm,
   map,
   urlTemplate: urlTemplateOsm,

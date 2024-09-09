@@ -1,8 +1,8 @@
 import {
-  addTileLayer,
   createMap,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { marker } from '../../../leaflet-adapter/marker.js';
+import { tileLayer } from '../../../leaflet-adapter/tile-layer.js';
 import {
   attributionOsm,
   urlTemplateOsm,
@@ -14,7 +14,7 @@ const map = createMap({
   zoom: 13,
 });
 
-addTileLayer({
+tileLayer({
   attribution: attributionOsm,
   map,
   urlTemplate: urlTemplateOsm,

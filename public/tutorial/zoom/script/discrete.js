@@ -1,11 +1,11 @@
 import {
-  addTileLayer,
   createDomElement,
   createMap,
   getMapZoom,
   setMapZoom,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { control } from '../../../leaflet-adapter/control/control.js';
+import { tileLayer } from '../../../leaflet-adapter/tile-layer.js';
 import {
   attributionCarto,
   urlTemplateCarto,
@@ -19,7 +19,7 @@ const map = createMap({
   zoomMin: 0,
 });
 
-addTileLayer({
+tileLayer({
   attribution: attributionCarto,
   map,
   urlTemplate: urlTemplateCarto,

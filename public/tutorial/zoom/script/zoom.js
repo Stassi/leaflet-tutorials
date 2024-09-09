@@ -1,16 +1,16 @@
 import {
-  addTileLayer,
   createDomElement,
   getMapZoom,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { control } from '../../../leaflet-adapter/control/control.js';
+import { tileLayer } from '../../../leaflet-adapter/tile-layer.js';
 import {
   attributionCarto,
   urlTemplateCarto,
 } from '../../../script/base-layers.js';
 
 function addCartoTileLayer(map) {
-  addTileLayer({
+  tileLayer({
     attribution: attributionCarto,
     map,
     urlTemplate: urlTemplateCarto,

@@ -1,10 +1,12 @@
 import {
-  DomUtil,
-  addTileLayer,
   createMap,
+  DomUtil,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { control } from '../../../leaflet-adapter/control/control.js';
-import { geoJson as leafletGeoJson } from '../../../leaflet-adapter/geo-json.js';
+import {
+  geoJson as leafletGeoJson,
+} from '../../../leaflet-adapter/geo-json.js';
+import { tileLayer } from '../../../leaflet-adapter/tile-layer.js';
 import {
   attributionOsm,
   urlTemplateOsm,
@@ -27,7 +29,7 @@ const map = createMap({
   1000,
 ];
 
-addTileLayer({
+tileLayer({
   attribution: attributionOsm,
   map,
   urlTemplate: urlTemplateOsm,
