@@ -4,7 +4,6 @@ import {
   icon,
   latLng as latitudeLongitude,
   map,
-  marker,
   popup,
   tileLayer,
 } from '../leaflet/leaflet-src.esm.js';
@@ -26,32 +25,6 @@ export {
   CrsEpsg4326,
   CrsSimple,
 };
-
-export function createMarker({
-  altText: alt = 'Marker',
-  iconOptions,
-  latitudeLongitude,
-  popupContent,
-}) {
-  const createdMarker = marker(
-    latitudeLongitude,
-    {
-      alt,
-      ...iconOptions
-        ? { icon: icon(iconOptions) }
-        : {}
-    },
-  );
-
-  return popupContent
-    ? createdMarker.bindPopup(popupContent)
-    : createdMarker;
-}
-
-export function addMarker({ map, ...props }) {
-  return createMarker({ ...props })
-    .addTo(map);
-}
 
 export function addPopup({
   htmlContent,
