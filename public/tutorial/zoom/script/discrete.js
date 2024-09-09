@@ -25,7 +25,7 @@ tileLayer({
 });
 
 function zoomMap(zoom) {
-  return setZoom({
+  setZoom({
     map,
     zoom,
   });
