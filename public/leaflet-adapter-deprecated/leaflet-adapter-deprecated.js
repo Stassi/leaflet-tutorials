@@ -1,37 +1,4 @@
-import { map } from '../leaflet/leaflet-src.esm.js';
-import {
-  epsg3857,
-} from '../leaflet-adapter/coordinate-reference-system/epsg-3857.js';
-
-export function createMap({
-  activeLayers: layers,
-  center,
-  crs = epsg3857,
-  dragging = true,
-  id,
-  onClick = () => {
-  },
-  zoom,
-  zoomDelta = 1,
-  zoomMax: maxZoom,
-  zoomMin: minZoom,
-  zoomSnap = 1,
-}) {
-  return map(id, {
-    center,
-    crs,
-    dragging,
-    layers,
-    maxZoom,
-    minZoom,
-    zoom,
-    zoomDelta,
-    zoomSnap,
-  }).on(
-    'click',
-    onClick,
-  );
-}
+import { map as leafletMap } from '../leaflet/leaflet-src.esm.js';
 
 export function createWorldLocatorMap({
   id,
@@ -40,17 +7,17 @@ export function createWorldLocatorMap({
   setViewOnLocate: setView,
   zoomMaxOnLocate: maxZoom,
 }) {
-  return map(id)
+  return leafletMap(id)
     .fitWorld()
     .locate({
       maxZoom,
-      setView
+      setView,
     }).on(
       'locationerror',
-      onLocateError
+      onLocateError,
     ).on(
       'locationfound',
-      onLocate
+      onLocate,
     )
 }
 
