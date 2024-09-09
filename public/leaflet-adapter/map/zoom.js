@@ -1,8 +1,8 @@
-export function getMapZoom(map) {
+export function getZoom(map) {
   return map.getZoom()
 }
 
-export function setMapZoom({
+export function setZoom({
   map,
   zoom,
   zoomPanOptions,
