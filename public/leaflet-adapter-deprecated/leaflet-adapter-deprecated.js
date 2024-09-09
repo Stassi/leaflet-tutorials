@@ -1,26 +1,3 @@
-import { map as leafletMap } from '../leaflet/leaflet-src.esm.js';
-
-export function createWorldLocatorMap({
-  id,
-  onLocate,
-  onLocateError,
-  setViewOnLocate: setView,
-  zoomMaxOnLocate: maxZoom,
-}) {
-  return leafletMap(id)
-    .fitWorld()
-    .locate({
-      maxZoom,
-      setView,
-    }).on(
-      'locationerror',
-      onLocateError,
-    ).on(
-      'locationfound',
-      onLocate,
-    )
-}
-
 export function fitMapBounds({
   bounds,
   map,
