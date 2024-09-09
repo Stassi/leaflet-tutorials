@@ -1,13 +1,11 @@
 import {
   CRS,
-  DomUtil,
   latLng as latitudeLongitude,
   map,
 } from '../leaflet/leaflet-src.esm.js';
 
 export {
   CRS,
-  DomUtil,
   layerGroup as createLayerGroup,
 } from '../leaflet/leaflet-src.esm.js';
 
@@ -20,27 +18,6 @@ export {
   CrsEpsg4326,
   CrsSimple,
 };
-
-export function createDomElement({ name, style }) {
-  const element = DomUtil.create(name);
-
-  Object.assign(
-    element.style,
-    style,
-  );
-
-  return {
-    appendChild(node) {
-      element.appendChild(node);
-      return node;
-    },
-    element,
-    setInnerHtml(innerHtml) {
-      element.innerHTML = innerHtml;
-      return innerHtml;
-    },
-  };
-}
 
 export function createMap({
   activeLayers: layers,
