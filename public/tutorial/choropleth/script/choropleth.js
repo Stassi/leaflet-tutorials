@@ -1,13 +1,11 @@
 import {
-  createMap,
-} from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
-import {
   DomUtility,
 } from '../../../leaflet-adapter/document-object-model/dom-utility.js';
 import { control } from '../../../leaflet-adapter/control/control.js';
 import {
   geoJson as leafletGeoJson,
 } from '../../../leaflet-adapter/geo-json.js';
+import { map as leafletMap } from '../../../leaflet-adapter/map/map.js';
 import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
 import {
   attributionOsm,
@@ -16,7 +14,7 @@ import {
 import data
   from '../data/us-state-population-density.json' with { type: 'json' };
 
-const map = createMap({
+const map = leafletMap({
   center: [37.8, -96],
   id: 'map',
   zoom: 4

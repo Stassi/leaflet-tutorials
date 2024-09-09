@@ -1,7 +1,5 @@
-import {
-  createMap,
-} from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { circle } from '../../../leaflet-adapter/circle.js';
+import { map as leafletMap } from '../../../leaflet-adapter/map/map.js';
 import { marker } from '../../../leaflet-adapter/marker.js';
 import { polygon } from '../../../leaflet-adapter/polygon.js';
 import { popup } from '../../../leaflet-adapter/popup.js';
@@ -11,7 +9,7 @@ import {
   urlTemplateOsm,
 } from '../../../script/base-layers.js';
 
-const map = createMap({
+const map = leafletMap({
   center: [51.505, -0.09],
   id: 'map',
   onClick: ({ latlng: latitudeLongitude }) => {

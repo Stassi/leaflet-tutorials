@@ -1,10 +1,10 @@
 import {
-  createMap,
   setMapZoom,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
+import { map as leafletMap } from '../../../leaflet-adapter/map/map.js';
 import { addCartoTileLayerWithZoomLevelControl } from './zoom.js';
 
-const map = createMap({
+const map = leafletMap({
   center: [0, 0],
   dragging: false,
   id: 'map',

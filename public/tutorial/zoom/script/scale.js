@@ -1,7 +1,7 @@
 import {
-  createMap,
   setMapView,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
+import { map as leafletMap } from '../../../leaflet-adapter/map/map.js';
 import { scale } from '../../../leaflet-adapter/control/scale.js';
 import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
 import {
@@ -9,7 +9,7 @@ import {
   urlTemplateCarto,
 } from '../../../script/base-layers.js';
 
-const map = createMap({
+const map = leafletMap({
   center: [0, 0],
   dragging: false,
   id: 'map',

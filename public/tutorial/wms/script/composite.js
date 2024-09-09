@@ -1,10 +1,10 @@
-import {
-  createMap,
-} from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { layers } from '../../../leaflet-adapter/control/layers.js';
-import { tileLayerWms } from '../../../leaflet-adapter/tile-layer/web-map-service.js';
+import { map as leafletMap } from '../../../leaflet-adapter/map/map.js';
+import {
+  tileLayerWms,
+} from '../../../leaflet-adapter/tile-layer/web-map-service.js';
 
-const map = createMap({
+const map = leafletMap({
   center: [-17, -67],
   id: 'map',
   zoom: 3,

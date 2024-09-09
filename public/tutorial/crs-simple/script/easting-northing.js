@@ -1,11 +1,11 @@
 import {
-  createMap,
   setMapView,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { imageOverlay } from '../../../leaflet-adapter/image-overlay.js';
 import {
   longitudeLatitude as xy,
 } from '../../../leaflet-adapter/longitude-latitude.js';
+import { map as leafletMap } from '../../../leaflet-adapter/map/map.js';
 import { marker } from '../../../leaflet-adapter/marker.js';
 import { polyline } from '../../../leaflet-adapter/polyline.js';
 import {
@@ -13,7 +13,7 @@ import {
 } from '../../../leaflet-adapter/coordinate-reference-system/simple.js';
 import waypoints from '../data/starmap-waypoints.json' with { type: 'json' };
 
-const map = createMap({
+const map = leafletMap({
   crs,
   id: 'map',
   zoomMin: -3,

@@ -1,6 +1,4 @@
-import {
-  createMap,
-} from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
+import { map as leafletMap } from '../../../leaflet-adapter/map/map.js';
 import { marker } from '../../../leaflet-adapter/marker.js';
 import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
 import {
@@ -8,7 +6,7 @@ import {
   urlTemplateOsm,
 } from '../../../script/base-layers.js';
 
-const map = createMap({
+const map = leafletMap({
   center: [50.4501, 30.5234],
   id: 'map',
   zoom: 4,

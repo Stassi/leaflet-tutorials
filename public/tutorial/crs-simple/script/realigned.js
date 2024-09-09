@@ -1,14 +1,14 @@
 import {
-  createMap,
   setMapView,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { imageOverlay } from '../../../leaflet-adapter/image-overlay.js';
+import { map as leafletMap } from '../../../leaflet-adapter/map/map.js';
 import { marker } from '../../../leaflet-adapter/marker.js';
 import {
   simple as crs,
 } from '../../../leaflet-adapter/coordinate-reference-system/simple.js';
 
-const map = createMap({
+const map = leafletMap({
   crs,
   id: 'map',
   zoomMin: -3,

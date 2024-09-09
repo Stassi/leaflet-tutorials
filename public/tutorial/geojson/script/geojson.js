@@ -1,10 +1,8 @@
-import {
-  createMap,
-} from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { circleMarker } from '../../../leaflet-adapter/circle-marker.js';
 import {
   geoJson as leafletGeoJson,
 } from '../../../leaflet-adapter/geo-json.js';
+import { map as leafletMap } from '../../../leaflet-adapter/map/map.js';
 import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
 import {
   attributionOsm,
@@ -12,7 +10,7 @@ import {
 } from '../../../script/base-layers.js';
 import data from '../data/baseball-factions.json' with { type: 'json' };
 
-const map = createMap({
+const map = leafletMap({
   center: [39.74739, -105],
   id: 'map',
   zoom: 13,

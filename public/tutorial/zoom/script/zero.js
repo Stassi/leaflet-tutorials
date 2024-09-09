@@ -1,6 +1,4 @@
-import {
-  createMap,
-} from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
+import { map } from '../../../leaflet-adapter/map/map.js';
 import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
 import {
   attributionCarto,
@@ -9,7 +7,7 @@ import {
 
 tileLayer({
   attribution: attributionCarto,
-  map: createMap({
+  map: map({
     center: [0, 0],
     id: 'map',
     zoom: 0,

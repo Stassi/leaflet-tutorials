@@ -1,8 +1,6 @@
-import {
-  createMap,
-} from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
 import { layerGroup } from '../../../leaflet-adapter/layer-group.js';
 import { layers } from '../../../leaflet-adapter/control/layers.js';
+import { map } from '../../../leaflet-adapter/map/map.js';
 import { marker } from '../../../leaflet-adapter/marker.js';
 import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
 import {
@@ -101,7 +99,7 @@ const baseLayers = Object.fromEntries(
 
 layers({
   baseLayers,
-  map: createMap({
+  map: map({
     activeLayers: [
       baseLayers.OpenStreetMap,
       overlays.Cities,

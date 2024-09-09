@@ -1,5 +1,4 @@
 import {
-  createMap,
   getMapZoom,
   setMapZoom,
 } from '../../../leaflet-adapter-deprecated/leaflet-adapter-deprecated.js';
@@ -7,13 +6,14 @@ import { control } from '../../../leaflet-adapter/control/control.js';
 import {
   domElement,
 } from '../../../leaflet-adapter/document-object-model/dom-element.js';
+import { map as leafletMap } from '../../../leaflet-adapter/map/map.js';
 import { tileLayer } from '../../../leaflet-adapter/tile-layer/tile-layer.js';
 import {
   attributionCarto,
   urlTemplateCarto,
 } from '../../../script/base-layers.js';
 
-const map = createMap({
+const map = leafletMap({
   center: [0, 0],
   id: 'map',
   zoom: 0,
