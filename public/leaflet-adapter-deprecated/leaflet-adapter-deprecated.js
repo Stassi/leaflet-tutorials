@@ -1,11 +1,12 @@
-import { CRS, map } from '../leaflet/leaflet-src.esm.js';
-
-const { EPSG3857: CrsEpsg3857 } = CRS;
+import { map } from '../leaflet/leaflet-src.esm.js';
+import {
+  epsg3857,
+} from '../leaflet-adapter/coordinate-reference-system/epsg-3857.js';
 
 export function createMap({
   activeLayers: layers,
   center,
-  crs = CrsEpsg3857,
+  crs = epsg3857,
   dragging = true,
   id,
   onClick = () => {
