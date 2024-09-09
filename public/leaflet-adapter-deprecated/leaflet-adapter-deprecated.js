@@ -1,8 +1,4 @@
-import {
-  CRS,
-  latLng as latitudeLongitude,
-  map,
-} from '../leaflet/leaflet-src.esm.js';
+import { CRS, map } from '../leaflet/leaflet-src.esm.js';
 
 const {
   Simple: CrsSimple,
@@ -74,14 +70,6 @@ export function fitMapBounds({
 
 export function getMapZoom(map) {
   return map.getZoom()
-}
-
-export function longitudeLatitude(x, y) {
-  const firstParameterIsArray = Array.isArray(x);
-  return latitudeLongitude(
-    firstParameterIsArray ? x[1] : y,
-    firstParameterIsArray ? x[0] : x,
-  );
 }
 
 export function setMapView({
